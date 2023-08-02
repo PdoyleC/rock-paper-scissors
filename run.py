@@ -17,3 +17,12 @@ sales = SHEET.worksheet('userinfo')
 data = sales.get_all_values()
 
 print(data)
+
+
+username = input("Please enter username:")
+print("Username is: " + username)
+
+def get_high_score():
+    """
+    Gets the high score from user who have played the game
+    """
