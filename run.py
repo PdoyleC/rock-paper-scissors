@@ -1,3 +1,9 @@
+"""
+Modules
+"""
+import random
+from random import randint
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -12,7 +18,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('tic_tac_toe')
 
-sales = SHEET.worksheet('userinfo')
+userscore = SHEET.worksheet('userinfo')
 
 # data = sales.get_all_values()
 
@@ -29,7 +35,8 @@ def intro():
     clear()
     print('')
     print("Welcome to Tic Tac Toe\n")
-    username = input("Please enter username:")
+    username = input("Please enter username: ")
+    sales_worksheet = SHEET.worksheet("userinfo")   
     print("\nWould you like to read the Game Instructions " + username)
     answer = input("Enter Y to read or N to continue to game\n").upper()
     print('')
@@ -46,7 +53,7 @@ def intro():
             answer = input("").upper()
 
 
-# def instructions():
+def instructions():
     """ 
     Game instructions will be printed if the user
     has never played the game.
@@ -57,7 +64,7 @@ def intro():
     print(" 3) A player takes turns againest the compluter.")
     print(" 4) The idea is to get 3 in a row.")
     print(' ')
-    time.sleep(15)
+    time.sleep(5)
     print("Would you like to Play the game or Quit and exit?")
     answer = input("Enter Y to play or N to Quit\n").upper()
     print('')
@@ -87,3 +94,4 @@ def clear():
     print("\033c")
     
 intro()
+
