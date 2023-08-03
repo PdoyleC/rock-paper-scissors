@@ -39,6 +39,7 @@ def intro():
     print('')
     print("Welcome to Rock Paper Scissors \n")
     username = input("Please enter username: ")
+    userscore.update_cell(3,1,"user")
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
