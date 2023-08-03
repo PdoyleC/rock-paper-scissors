@@ -41,15 +41,14 @@ def intro():
     username = input("Please enter username: ")
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
-    print("\nWould you like to read the Game Instructions \n." + username)
-    answer = input("Enter Y to read or N to continue to game.\n").upper()
+    print("\nWould you like to read the Game Instructions " + username)
+    answer = input("\nEnter Y to read the instructions or N to continue to game.\n").upper()
     print('')
     while True:
         if answer == "Y":
             instructions()
         elif answer == "N":
-            clear()
-            opening()
+            play_game()
 
         else:
             print('')
@@ -88,7 +87,25 @@ def instructions():
 # def print_board():
 def play_game():
     user = input("Please choose _ R for Rock, P for Paper, and S for Scissors\n").upper()
-    computer
+    if user == computer:
+        print("Tie!")
+    elif user == "R":
+        if computer == "P":
+            print("You lose!")
+        else:
+            print("You win!")
+    elif user == "P":
+        if computer == "S":
+            print("You lose!")
+        else:
+            print("You win!")
+    elif user == "S":
+        if computer == "R":
+            print("You lose...")
+        else:
+            print("You win!")
+    else:
+        print("That's not a valid play. Check your spelling!")
 
 
 # def get_high_score():
@@ -102,5 +119,6 @@ def clear():
     """
     print("\033c")
     
+play_game()
 intro()
 
