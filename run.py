@@ -63,11 +63,12 @@ def instructions():
     """
     clear()
     print(" 1) Game is played against the computer.")
-    print(" 2) User enter either R-(Rock) or P-(Paper) or S-(Scissors).")
-    print(" 2) Rock wins against scissors.")
-    print(" 3) Scissors win against paper.")
-    print(" 4) Paper wins against rock.")
-    print(" 5) Enter Q to stop the game.")
+    print(" 2) User enters either 'R'-(Rock) or 'P'-(Paper) or 'S'-(Scissors).")
+    print(" 3) Rock wins against scissors.")
+    print(" 4) Scissors win against paper.")
+    print(" 5) Paper wins against rock.")
+    print(" 6) Enter Q to stop the game.")
+    print(" 7) Enter C to to clear the console.")
     print(' ')
     time.sleep(8)
     print("Would you like to Play the game or Quit and exit?")
@@ -85,7 +86,7 @@ def instructions():
             answer = input("").upper()
     clear()
 
-# def print_board():
+
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
@@ -104,7 +105,7 @@ def play_game():
             print("You win!")
     elif user == "S":
         if computer == "R":
-            print("You lose...")
+            print("You lose")
         else:
             print("You win!")
 
@@ -117,7 +118,7 @@ def play_game():
     elif user == "C":
             clear()            
     else:
-        print("That's not a valid play. Check your spelling! Enter Q to quit the game.")
+        print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'! Enter Q to quit the game.")
 
 
 # def get_high_score():
@@ -144,3 +145,10 @@ def you_win():
 
 intro()
 
+
+
+
+#dsfg
+#sdg
+#sdg
+#sdg
