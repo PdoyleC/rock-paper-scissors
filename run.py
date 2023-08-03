@@ -1,5 +1,14 @@
+"""
+Modules
+"""
+import random
+from random import randint
+import time
 import gspread
 from google.oauth2.service_account import Credentials
+
+choice = ["R", "P", "S"]
+computer = choice[randint(0,2)]
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -12,59 +21,86 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 
+userscore = SHEET.worksheet('userinfo')
 
-def get_sales_data():
+# data = sales.get_all_values()
+
+# print(data)
+
+
+
+
+def intro():
     """
-    Get sales figures input from the user.
-    Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be a string of 6 numbers separated
-    by commas. The loop will repeatedly request data, until it is valid.
+    This is the opening to the game
+    User can pick to play or read the instructions.
     """
+    clear()
+    print('')
+    print("Welcome to Rock Paper Scissors \n")
+    username = input("Please enter username: ")
+    sales_worksheet = SHEET.worksheet("userinfo")
+    clear() 
+    print("\nWould you like to read the Game Instructions \n." + username)
+    answer = input("Enter Y to read or N to continue to game.\n").upper()
+    print('')
     while True:
-        print("Please enter sales data from the last market.")
-        print("Data should be six numbers, separated by commas.")
-        print("Example: 10,20,30,40,50,60\n")
+        if answer == "Y":
+            instructions()
+        elif answer == "N":
+            clear()
+            opening()
 
-        data_str = input("Enter your data here: ")
+        else:
+            print('')
+            print("Please enter a valid input of either Y or N\n")
+            answer = input("").upper()
 
-        sales_data = data_str.split(",")
 
-        if validate_data(sales_data):
-            print("Data is valid!")
+def instructions():
+    """ 
+    Game instructions will be printed if the user
+    has never played the game.
+    """
+    clear()
+    print(" 1) Game is played against the computer.")
+    print(" 2) User enter either R-(Rock) or P-(Paper) or S-(Scissors).")
+    print(" 2) Rock wins against scissors.")
+    print(" 3) Scissors win against paper.")
+    print(" 4) Paper wins against rock.")
+    print(' ')
+    time.sleep(10)
+    print("Would you like to Play the game or Quit and exit?")
+    answer = input("Enter Y to play or N to Quit\n").upper()
+    print('')
+    while True:
+        if answer == "Y":
+            play_game()
+        elif answer == "N":
             break
 
-    return sales_data
+        else:
+            print('')
+            print("Please enter a valid input of either Y to play or N to Quit\n")
+            answer = input("").upper()
+    clear()
+
+# def print_board():
+def play_game():
+    user = input("Please choose _ R for Rock, P for Paper, and S for Scissors\n").upper()
+    computer
 
 
-def validate_data(values):
+# def get_high_score():
+#     """
+#     Gets the high score from user who have played the game
+#     """
+
+def clear():
     """
-    Inside the try, converts all string values into integers.
-    Raises ValueError if strings cannot be converted into int,
-    or if there aren't exactly 6 values.
+        Clears the screen
     """
-    try:
-        [int(value) for value in values]
-        if len(values) != 6:
-            raise ValueError(
-                f"Exactly 6 values required, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
+    print("\033c")
+    
+intro()
 
-    return True
-
-
-def update_sales_worksheet(data):
-    """
-    Update sales worksheet, add new row with the list data provided
-    """
-    print("Updating sales worksheet...\n")
-    sales_worksheet = SHEET.worksheet("score")
-    sales_worksheet.append_row(data)
-    print("Sales worksheet updated successfully.\n")
-
-
-data = get_sales_data()
-sales_data = [int(num) for num in data]
-update_sales_worksheet(sales_data)
