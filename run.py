@@ -88,7 +88,7 @@ def instructions():
 def play_game():
     user = input("Please choose _ R for Rock, P for Paper, and S for Scissors\n").upper()
     if user == computer:
-        print("Tie!")
+        print("Draw!")
     elif user == "R":
         if computer == "P":
             print("You lose!")
@@ -120,5 +120,5 @@ def clear():
     print("\033c")
     
 play_game()
-intro()
+# intro()
 
