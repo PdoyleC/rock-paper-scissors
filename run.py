@@ -16,7 +16,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('tic_tac_toe')
+SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 
 userscore = SHEET.worksheet('userinfo')
 
@@ -59,10 +59,11 @@ def instructions():
     has never played the game.
     """
     clear()
-    print(" 1) Game is played on a grid of 3x3 for 2 players.")
-    print(" 2) X's and O's are used for each player.")
-    print(" 3) A player takes turns againest the compluter.")
-    print(" 4) The idea is to get 3 in a row.")
+    print(" 1) Game is played against the computer.")
+    print(" 2) User enter either R-(Rock) or P-(Paper) or S-(Scissors).")
+    print(" 2) Rock wins against scissors.")
+    print(" 3) Scissors win against paper.")
+    print(" 4) Paper wins against rock.")
     print(' ')
     time.sleep(5)
     print("Would you like to Play the game or Quit and exit?")
