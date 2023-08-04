@@ -49,7 +49,6 @@ def intro():
     print('')
     username = input("Please enter username: ")
     userscore.update_cell(3,1, username)
-    userscore.append_row([username], table_range='A1')
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
