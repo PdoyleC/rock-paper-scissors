@@ -43,13 +43,13 @@ def intro():
     """
     clear()
     print('')
-    print_slow("Welcome to Rock Paper Scissors \n")
+    # print_slow("Welcome to Rock Paper Scissors \n") comment out for testing
     print('')
-    print_slow("     🪨  Vs 📄  Vs ✂️\n")
+    # print_slow("     🪨  Vs 📄  Vs ✂️\n") comment out for testing
     print('')
     username = input("Please enter username: ")
-    userscore.update_cell(3,1, username)
-    userscore.append_row([username], table_range='A1')
+    # userscore.update_cell(3,1, username) comment out for testing
+    userscore.append_row([username], table_range='A2')
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
@@ -162,25 +162,28 @@ def play_game():
 def user_win():
     global win    
     win += 1    
-    userscore.update_cell(3,2, win)  # for total games played
+    userscore.update_cell(6,7, win)  # for total games played
+    #userscore.append_row([win], table_range='B2')
     play_game()
 
 def user_lose():
     global lose    
     lose += 1    
-    userscore.update_cell(3,3, lose)
+    userscore.update_cell(6,8, lose)
+    #userscore.append_row([lose], table_range='C2')
     play_game()
 
 def user_draw():
     global level    
     level += 1    
-    userscore.update_cell(3,4, level)
+    userscore.update_cell(6,9, level)
+    #userscore.append_row([level], table_range='D2')
     play_game()
 
 def user_total():
     global total    
     total += 1    
-    userscore.update_cell(3,5, total)
+    userscore.update_cell(6,10, total)
     play_game()
 
 
@@ -189,7 +192,7 @@ def reset():
     userscore.update_cell(3,2, "0")
     userscore.update_cell(3,3, "0")
     userscore.update_cell(3,4, "0")
-    userscore.update_cell(3,5, "=SUM(B3:D3)")
+    userscore.update_cell(6,11, "=SUM(G6:I6)")
 
 def clear():
     """
