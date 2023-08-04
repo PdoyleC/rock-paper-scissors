@@ -10,9 +10,7 @@ from google.oauth2.service_account import Credentials
 
 choice = ["R", "P", "S"]
 computer = choice[randint(0,2)]
-wins = 0
-lose = 0
-draw = 0
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -46,7 +44,7 @@ def intro():
     print_slow("     🪨  Vs 📄  Vs ✂️\n")
     print('')
     username = input("Please enter username: ")
-    # userscore.update_cell(3,1, "userinfo")
+    userscore.update_cell(3,1, username)
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
@@ -100,16 +98,12 @@ def play_game():
     computer = choice[randint(0,2)]
     user = input("\u001b[37mPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     if user == computer:
-        draw += 1
         print("Draw!\n")
-        draw()
     elif user == "R":
         if computer == "P":
             print("\u001b[31mYou Lose!\n")
-            lose()
         else:            
             print("\u001b[32mYou Win!\n")
-            wins()
     elif user == "P":
         if computer == "S":
             print("\u001b[31mYou Lose!\n")
@@ -145,9 +139,13 @@ def win():
     wins += 1
     play_game()
 
-def lose():
-    lose += 1
-    play_game()
+def reset():
+    wins = 0
+    lose = 0
+    draw = 0
+    userscore.update_cell(3,2, "0")
+    userscore.update_cell(3,3, "0")
+    userscore.update_cell(3,4, "0")
 
 def clear():
     """
@@ -175,5 +173,7 @@ def you_win():
 
 
 
-#intro()
-play_game()
+
+reset()
+intro()
+# play_game()
