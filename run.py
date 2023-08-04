@@ -3,7 +3,7 @@ Modules
 """
 import random
 from random import randint
-import time
+import sys, time
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -91,24 +91,24 @@ def instructions():
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
-    user = input("Please choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
+    user = input("\u001b[37mPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     if user == computer:
-        print("Draw!")
+        print("Draw!\n")
     elif user == "R":
         if computer == "P":
-            print("You lose!")
+            print("\u001b[31mYou lose!\n")
         else:
-            print("You win!")
+            print("\u001b[32mYou win!\n")
     elif user == "P":
         if computer == "S":
-            print("You lose!")
+            print("\u001b[31mYou lose!\n")
         else:
-            print("You win!")
+            print("\u001b[32mYou win!\n")
     elif user == "S":
         if computer == "R":
-            print("You lose")
+            print("\u001b[31mYou lose\n")
         else:
-            print("You win!")
+            print("\u001b[32mYou win!\n")
 
     elif user == "Q":
             clear()
