@@ -10,6 +10,9 @@ from google.oauth2.service_account import Credentials
 
 choice = ["R", "P", "S"]
 computer = choice[randint(0,2)]
+wins = 0
+lose = 0
+draw = 0
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -43,7 +46,7 @@ def intro():
     print_slow("     🪨  Vs 📄  Vs ✂️\n")
     print('')
     username = input("Please enter username: ")
-    userscore.update_cell(3,1,"Philip")
+    # userscore.update_cell(3,1, "userinfo")
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
@@ -97,22 +100,26 @@ def play_game():
     computer = choice[randint(0,2)]
     user = input("\u001b[37mPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     if user == computer:
+        draw += 1
         print("Draw!\n")
+        draw()
     elif user == "R":
         if computer == "P":
-            print("\u001b[31mYou lose!\n")
-        else:
-            print("\u001b[32mYou win!\n")
+            print("\u001b[31mYou Lose!\n")
+            lose()
+        else:            
+            print("\u001b[32mYou Win!\n")
+            wins()
     elif user == "P":
         if computer == "S":
-            print("\u001b[31mYou lose!\n")
+            print("\u001b[31mYou Lose!\n")
         else:
-            print("\u001b[32mYou win!\n")
+            print("\u001b[32mYou Win!\n")
     elif user == "S":
         if computer == "R":
-            print("\u001b[31mYou lose\n")
-        else:
-            print("\u001b[32mYou win!\n")
+            print("\u001b[31mYou Lose\n")
+        else:            
+            print("\u001b[32mYou Win!\n")
 
     elif user == "Q":
             clear()
@@ -130,6 +137,17 @@ def play_game():
 #     """
 #     Gets the high score from user who have played the game
 #     """
+def draw():
+    draw += 1
+    play_game()
+
+def win():
+    wins += 1
+    play_game()
+
+def lose():
+    lose += 1
+    play_game()
 
 def clear():
     """
@@ -157,4 +175,5 @@ def you_win():
 
 
 
-intro()
+#intro()
+play_game()
