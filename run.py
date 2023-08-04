@@ -27,7 +27,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 
-userscore = SHEET.worksheet('userinfo')
+userinfo = SHEET.worksheet('userinfo')
+userscore = SHEET.worksheet('userscore')
 
 # data = sales.get_all_values()
 
@@ -49,7 +50,7 @@ def intro():
     print('')
     username = input("Please enter username: ")
     # userscore.update_cell(3,1, username) comment out for testing
-    userscore.append_row([username], table_range='A2')
+    userinfo.append_row([username], table_range='A2')
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
@@ -105,37 +106,29 @@ def play_game():
     time.sleep(1)
     user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     print("Total games played")
-    print(userscore.cell(3,5).value)
     if user == computer:
         print("It's a Draw! ")
-        print(userscore.cell(3,1).value)
         user_draw()
     elif user == "R":
         if computer == "P":
             print("\u001b[31mYou Lose!")
-            print(userscore.cell(3,1).value)
             user_lose()
         else:            
             print("\u001b[32mYou Win!")
-            print(userscore.cell(3,1).value)
             user_win()
     elif user == "P":
         if computer == "S":
             print("\u001b[31mYou Lose!")
-            print(userscore.cell(3,1).value)
             user_lose()
         else:
             print("\u001b[32mYou Win!")
-            print(userscore.cell(3,1).value)
             user_win()
     elif user == "S":
         if computer == "R":
             print("\u001b[31mYou Lose")
-            print(userscore.cell(3,1).value)
             user_lose()
         else:            
             print("\u001b[32mYou Win!")
-            print(userscore.cell(3,1).value)
             user_win()
 
     elif user == "Q":
@@ -171,37 +164,37 @@ def play_game():
 def user_win():
     global win    
     win += 1    
-    userscore.update_cell(6,7, win)  # for total games played
+    userscore.update_cell(1,1, win)  # for total games played
     #userscore.append_row([win], table_range='B2')
     play_game()
 
 def user_lose():
     global lose    
     lose += 1    
-    userscore.update_cell(6,8, lose)
+    userscore.update_cell(1,2, lose)
     #userscore.append_row([lose], table_range='C2')
     play_game()
 
 def user_draw():
     global level    
     level += 1    
-    userscore.update_cell(6,9, level)
+    userscore.update_cell(1,3, level)
     #userscore.append_row([level], table_range='D2')
     play_game()
 
 def user_total():
     global total    
     total += 1    
-    userscore.update_cell(6,10, total)
+    userscore.update_cell(1,4, total)
     play_game()
 
 
 
 def reset():
-    userscore.update_cell(3,2, "0")
-    userscore.update_cell(3,3, "0")
-    userscore.update_cell(3,4, "0")
-    userscore.update_cell(6,11, "=SUM(G6:I6)")
+    userscore.update_cell(1,1, "0")
+    userscore.update_cell(1,2, "0")
+    userscore.update_cell(1,3, "0")
+    userscore.update_cell(1,4, "=SUM(A1:C1)")
 
 def clear():
     """
