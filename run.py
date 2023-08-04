@@ -102,6 +102,7 @@ def instructions():
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
+    time.sleep(1)
     user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     print("Total games played")
     print(userscore.cell(3,5).value)
@@ -139,6 +140,14 @@ def play_game():
 
     elif user == "Q":
             clear()
+            userscore.append_row([username], table_range='B2')
+
+            userscore.append_row([username], table_range='C2')
+
+            userscore.append_row([username], table_range='D2')
+
+            userscore.append_row([username], table_range='E2')
+
             print("Thank you for playing the game.")
             time.sleep(5)
             # intro()
