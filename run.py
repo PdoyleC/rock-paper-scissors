@@ -49,6 +49,7 @@ def intro():
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
     answer = input("\nEnter Y to read the instructions or N to continue to game.\n").upper()
+    # print(userscore.cell(3,1).value) this works
     print('')
     while True:
         if answer == "Y":
@@ -96,24 +97,31 @@ def instructions():
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
-    user = input("\u001b[37mPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
+    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     if user == computer:
-        print("Draw!\n")
+        print("It's a Draw! ")
+        print(userscore.cell(3,1).value)
     elif user == "R":
         if computer == "P":
-            print("\u001b[31mYou Lose!\n")
+            print("\u001b[31mYou Lose!")
+            print(userscore.cell(3,1).value)
         else:            
-            print("\u001b[32mYou Win!\n")
+            print("\u001b[32mYou Win!")
+            print(userscore.cell(3,1).value)
     elif user == "P":
         if computer == "S":
-            print("\u001b[31mYou Lose!\n")
+            print("\u001b[31mYou Lose!")
+            print(userscore.cell(3,1).value)
         else:
-            print("\u001b[32mYou Win!\n")
+            print("\u001b[32mYou Win!")
+            print(userscore.cell(3,1).value)
     elif user == "S":
         if computer == "R":
-            print("\u001b[31mYou Lose\n")
+            print("\u001b[31mYou Lose")
+            print(userscore.cell(3,1).value)
         else:            
-            print("\u001b[32mYou Win!\n")
+            print("\u001b[32mYou Win!")
+            print(userscore.cell(3,1).value)
 
     elif user == "Q":
             clear()
