@@ -3,7 +3,8 @@ Modules
 """
 import random
 from random import randint
-import sys, time
+import sys
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -37,9 +38,12 @@ def intro():
     """
     clear()
     print('')
-    print("Welcome to Rock Paper Scissors \n")
+    print_slow("Welcome to Rock Paper Scissors \n")
+    print('')
+    print_slow("     🪨  Vs 📄  Vs ✂️\n")
+    print('')
     username = input("Please enter username: ")
-    userscore.update_cell(3,1,"user")
+    userscore.update_cell(3,1,"Philip")
     sales_worksheet = SHEET.worksheet("userinfo")
     clear() 
     print("\nWould you like to read the Game Instructions " + username)
@@ -133,6 +137,15 @@ def clear():
     """
     print("\033c")
     
+def print_slow(ltr):
+    """
+    Creates a slow typing effect
+    """
+    for letter in ltr:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.1)
+
 
 def you_win():
     print(' ')
@@ -145,11 +158,3 @@ def you_win():
 
 
 intro()
-
-
-
-
-#dsfg
-#sdg
-#sdg
-#sdg
