@@ -44,25 +44,34 @@ def intro():
     """
     clear()
     print('')
-    # print_slow("Welcome to Rock Paper Scissors \n") comment out for testing
+    print_slow("Welcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    # print_slow("     🪨  Vs 📄  Vs ✂️\n") comment out for testing
+    print_slow("     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
+    time.sleep(5)
+    clear()
     username = input("Please enter username: ")
     # userscore.update_cell(3,1, username) comment out for testing
     userinfo.append_row([username], table_range='A2')
-    sales_worksheet = SHEET.worksheet("userinfo")
-    clear() 
-    print("\nWould you like to read the Game Instructions " + username)
-    answer = input("\nEnter Y to read the instructions or N to continue to game.\n").upper()
+    time.sleep(2)
+    clear()
+    #menu()
+
+#def menu():    
+    print("\nWelcome " + username)
+    print("\nPlease enter your selection by pressing the corresponding number.")
+    print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
+    print("\n2)....Press 2 and then Enter to read the instruction's.")
+    # print("\nWould you like to read the Game Instructions " + username)
+    answer = input("\n\nPlease enter your choice - .\n").upper()
     # print(userscore.cell(3,1).value) this works
     print('')
     while True:
-        if answer == "Y":
-            instructions()
-        elif answer == "N":
+        if answer == "1":
             play_game()
-
+        elif answer == "2":
+            instructions()
+            
         else:
             print('')
             print("Please enter a valid input of either Y or N\n")
@@ -85,7 +94,7 @@ def instructions():
     print(' ')
     time.sleep(8)
     print("Would you like to Play the game or Quit and exit?")
-    answer = input("Enter Y to play or N to Quit\n").upper()
+    answer = input("Enter Y to play or Q to Quit\n").upper()
     print('')
     while True:
         if answer == "Y":
@@ -103,9 +112,9 @@ def instructions():
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
-    time.sleep(1)
+    time.sleep(2)
+    clear()
     user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
-    print("Total games played")
     if user == computer:
         print("It's a Draw! ")
         user_draw()
@@ -148,7 +157,8 @@ def play_game():
     elif user == "C":
             clear()            
     else:
-        print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'! Enter Q to quit the game.")
+        print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
+        time.sleep(3)
 
 
 
