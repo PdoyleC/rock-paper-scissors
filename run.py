@@ -55,10 +55,10 @@ def intro():
     userinfo.append_row([username], table_range='A2')
     time.sleep(2)
     clear()
-    #menu()
-
-#def menu():    
     print("\nWelcome " + username)
+    menu()
+
+def menu():
     print("\nPlease enter your selection by pressing the corresponding number.")
     print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n2)....Press 2 and then Enter to read the instruction's.")
@@ -94,12 +94,13 @@ def instructions():
     print(' ')
     time.sleep(8)
     print("Would you like to Play the game or Quit and exit?")
-    answer = input("Enter Y to play or Q to Quit\n").upper()
+    answer = input("Enter P to play or M to go to the Menu\n").upper()
     print('')
     while True:
-        if answer == "Y":
+        if answer == "P":
             play_game()
-        elif answer == "N":
+        elif answer == "M":
+            menu()
             break
 
         else:
@@ -172,7 +173,7 @@ def play_game():
 #     """
 
 def user_win():
-    global win    
+    global win
     win += 1    
     userscore.update_cell(1,1, win)  # for total games played
     #userscore.append_row([win], table_range='B2')
