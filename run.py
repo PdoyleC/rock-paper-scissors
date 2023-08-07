@@ -44,13 +44,13 @@ def intro():
     """
     clear()
     print('')
-    print_slow("Welcome to Rock Paper Scissors \n") #comment out for testing
+    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    print_slow("     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(5)
     clear()
-    username = input("Please enter username: \n")
+    username = input("\t\t\tPlease enter username: \n")
     # userscore.update_cell(3,1, username) comment out for testing
     userinfo.append_row([username], table_range='A2')
     time.sleep(2)
