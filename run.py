@@ -44,13 +44,13 @@ def intro():
     """
     clear()
     print('')
-    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    #print_slow("\t\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    #print_slow("\t\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(5)
     clear()
-    username = input("\t\t\tPlease enter username: \n")
+    username = input("Please enter username: \n")
     # userscore.update_cell(3,1, username) comment out for testing
     userinfo.append_row([username], table_range='A2')
     time.sleep(2)
@@ -115,7 +115,7 @@ def instructions():
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
-    time.sleep(2)
+    time.sleep(5)
     clear()
     user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
     if user == computer:
@@ -123,36 +123,37 @@ def play_game():
         user_draw()
     elif user == "R":
         if computer == "P":
+            print("You choose Rock, Computer picked Paper")
             print("\u001b[31mYou Lose!")
             user_lose()
         else:            
+            print("You choose Rock, Computer picked Scissors")
             print("\u001b[32mYou Win!")
             user_win()
     elif user == "P":
         if computer == "S":
+            print("You choose Paper, Computer picked Scissors")
             print("\u001b[31mYou Lose!")
             user_lose()
         else:
+            print("You choose Paper, Computer picked Rock")
             print("\u001b[32mYou Win!")
             user_win()
     elif user == "S":
         if computer == "R":
+            print("You choose Scissors, Computer picked Rock")
             print("\u001b[31mYou Lose")
             user_lose()
         else:            
+            print("You choose Scissors, Computer picked Paper")
             print("\u001b[32mYou Win!")
             user_win()
 
     elif user == "Q":
             clear()
-            userscore.append_row([username], table_range='B2')
-
-            userscore.append_row([username], table_range='C2')
-
-            userscore.append_row([username], table_range='D2')
-
-            userscore.append_row([username], table_range='E2')
-
+            userinfo.append_row([win], table_range='B2')
+            userinfo.append_row([lose], table_range='C2')
+            userinfo.append_row([level], table_range='D2')
             print("Thank you for playing the game.")
             time.sleep(5)
             # intro()
@@ -173,6 +174,15 @@ def play_game():
 #     """
 #     Gets the high score from user who have played the game
 #     """
+
+def quit():
+    global win
+    global lose
+    global draw
+    userscore.append_row([win], table_range='B2')
+    userscore.append_row([lose], table_range='C2')
+    userscore.append_row([level], table_range='D2')
+
 
 def user_win():
     global win
