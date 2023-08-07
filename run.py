@@ -50,7 +50,7 @@ def intro():
     print('')
     time.sleep(5)
     clear()
-    username = input("Please enter username: ")
+    username = input("Please enter username: \n")
     # userscore.update_cell(3,1, username) comment out for testing
     userinfo.append_row([username], table_range='A2')
     time.sleep(2)
@@ -62,6 +62,8 @@ def menu():
     print("\nPlease enter your selection by pressing the corresponding number.")
     print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n2)....Press 2 and then Enter to read the instruction's.")
+    #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
+    #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
     # print("\nWould you like to read the Game Instructions " + username)
     answer = input("\n\nPlease enter your choice - .\n").upper()
     # print(userscore.cell(3,1).value) this works
@@ -221,16 +223,6 @@ def print_slow(ltr):
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(0.1)
-
-
-def you_win():
-    print(' ')
-    print('                     __ __ _____ _____    _ _ _ _____ _____ ')
-    print('                    |  |  |     |  |  |  | | | |     |   | |')
-    print('                    |_   _|  |  |  |  |  | | | |  |  | | | |')
-    print('                      |_| |_____|_____|  |_____|_____|_|___|')
-    print(' ')
-
 
 
 
