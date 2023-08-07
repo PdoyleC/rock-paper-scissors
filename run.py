@@ -44,9 +44,9 @@ def intro():
     """
     clear()
     print('')
-    #print_slow("\t\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    print_slow("\t\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    #print_slow("\t\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    print_slow("\t\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(5)
     clear()
@@ -152,8 +152,8 @@ def play_game():
     elif user == "Q":
             clear()
             userinfo.append_row([win], table_range='B2')
-            userinfo.append_row([lose], table_range='C2')
-            userinfo.append_row([level], table_range='D2')
+            #userinfo.append_row([lose], table_range='C2')
+            #userinfo.append_row([level], table_range='D2')
             print("Thank you for playing the game.")
             time.sleep(5)
             # intro()
