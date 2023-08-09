@@ -44,14 +44,19 @@ def intro():
     User can pick to play or read the instructions.
     """
     clear()
-    global username
     print('')
-    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    #print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    #print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(2)
     clear()
+    enter_username()
+
+def enter_username():  
+    clear() 
+    reset()
+    global username 
     username = input("Please enter username: \n")
     # userscore.update_cell(3,1, username) comment out for testing
     # userinfo.append_row([username], table_range='A2')
@@ -70,6 +75,7 @@ def menu():
     print("\n2)....Press 2 and then Enter to read the instruction's.")
     #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
     #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
+    print("\n4)....Press 4 and then Enter to Enter new Username.")
     print("\n5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
     answer = input("\n\nPlease enter your choice - .\n").upper()
@@ -83,10 +89,11 @@ def menu():
         if answer == "5":
             print("Thank you for playing the game.")
             exit()
-            
+        elif answer =="4":
+            enter_username()
         else:
             print('')
-            print("Please enter a valid input of either 1 or 2\n")
+            print("Please enter a valid input of either 1, 2, 4 or 5\n")
             answer = input("").upper()
 
 
@@ -118,7 +125,7 @@ def instructions():
 
         else:
             print('')
-            print("Please enter a valid input of either P to play, M to go to the Menu or E to exit\n")
+            print("Please enter a valid input of either P to play, M for Menu or E to exit\n")
             answer = input("").upper()
     clear()
 
@@ -127,24 +134,26 @@ def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
     clear()
-    global total    
+    global total
     global win
-    total += 1 
     user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors. \nEnter Q to quit the game. \nEnter M to go back to the Menu.\n\n").upper()
     if user == computer:
         print("It's a Draw! "+ username)
-        user_draw()
+        total += 1
         input("\u001b[37mPress Enter to continue...")
+        play_game()
     elif user == "R":
         if computer == "P":
             print("You choose Rock, Computer picked Paper")
             print("\u001b[31mYou Lose! " + username)
             input("\u001b[37mPress Enter to continue...")
+            total += 1
             play_game()
         else:            
             print("You choose Rock, Computer picked Scissors")
             print("\u001b[32mYou Win! " + username)
             win += 1
+            total += 1
             input("\u001b[37mPress Enter to continue...")
             play_game()
     elif user == "P":
@@ -152,11 +161,13 @@ def play_game():
             print("You choose Paper, Computer picked Scissors")
             print("\u001b[31mYou Lose! " + username)
             input("\u001b[37mPress Enter to continue...")
+            total += 1
             play_game()
         else:
             print("You choose Paper, Computer picked Rock")
             print("\u001b[32mYou Win! " + username)
             win += 1
+            total += 1
             input("\u001b[37mPress Enter to continue...")
             play_game()
     elif user == "S":
@@ -164,11 +175,13 @@ def play_game():
             print("You choose Scissors, Computer picked Rock")
             print("\u001b[31mYou Lose " + username)
             input("\u001b[37mPress Enter to continue...")
+            total += 1
             play_game()
         else:            
             print("You choose Scissors, Computer picked Paper")
             print("\u001b[32mYou Win! " + username)
             win += 1
+            total += 1
             input("\u001b[37mPress Enter to continue...")
             play_game()
 
@@ -186,6 +199,7 @@ def play_game():
             userinfo.append_row([username], table_range='A2')
             userinfo.append_row([win], table_range='H2')
             userinfo.append_row([total], table_range='T2')
+            reset()
             menu()
     else:
         print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
@@ -212,41 +226,42 @@ def play_game():
 #     exit()
 
 
-def user_win():
+# def user_win():
+#     global win
+#     win += 1    
+#     #userscore.update_cell(1,1, win)  # for total games played
+#     #userscore.append_row([win], table_range='B2')
+#     play_game()
+
+# def user_lose():
+#     global lose    
+#     lose += 1    
+#     #userscore.update_cell(1,2, lose)
+#     #userscore.append_row([lose], table_range='C2')
+#     play_game()
+
+# def user_draw():
+#     global level    
+#     level += 1    
+#     #userscore.update_cell(1,3, level)
+#     #userscore.append_row([level], table_range='D2')
+#     play_game()
+
+# def user_total():
+#     global total    
+#     total += 1    
+#     #userscore.update_cell(1,4, total)
+#     play_game()
+
+
+
+def reset():
+    global total
+    total = 0
     global win
-    win += 1    
-    #userscore.update_cell(1,1, win)  # for total games played
-    #userscore.append_row([win], table_range='B2')
-    play_game()
-
-def user_lose():
-    global lose    
-    lose += 1    
-    #userscore.update_cell(1,2, lose)
-    #userscore.append_row([lose], table_range='C2')
-    play_game()
-
-def user_draw():
-    global level    
-    level += 1    
-    #userscore.update_cell(1,3, level)
-    #userscore.append_row([level], table_range='D2')
-    play_game()
-
-def user_total():
-    global total    
-    total += 1    
-    #userscore.update_cell(1,4, total)
-    play_game()
-
-
-
-# def reset():
-#     userscore.update_cell(1,1, "0")
-#     userscore.update_cell(1,2, "0")
-#     userscore.update_cell(1,3, "0")
-#     userscore.update_cell(1,4, "=SUM(A1:C1)")
-
+    win = 0
+    
+    
 def clear():
     """
         Clears the screen
@@ -264,6 +279,6 @@ def print_slow(ltr):
 
 
 
-
+reset()
 intro()
 # play_game()
