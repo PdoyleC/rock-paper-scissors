@@ -64,7 +64,7 @@ def menu():
     print("\n2)....Press 2 and then Enter to read the instruction's.")
     #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
     #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
-    # print("\nWould you like to read the Game Instructions " + username)
+    #print("\nWould you like to read the Game Instructions " + username)
     answer = input("\n\nPlease enter your choice - .\n").upper()
     # print(userscore.cell(3,1).value) this works
     print('')
@@ -76,7 +76,7 @@ def menu():
             
         else:
             print('')
-            print("Please enter a valid input of either Y or N\n")
+            print("Please enter a valid input of either 1 or 2\n")
             answer = input("").upper()
 
 
@@ -151,9 +151,7 @@ def play_game():
 
     elif user == "Q":
             clear()
-            userinfo.append_row([win], table_range='B2')
-            #userinfo.append_row([lose], table_range='C2')
-            #userinfo.append_row([level], table_range='D2')
+            userinfo.append_row([win], table_range='H2')
             print("Thank you for playing the game.")
             time.sleep(5)
             # intro()
@@ -175,49 +173,50 @@ def play_game():
 #     Gets the high score from user who have played the game
 #     """
 
-def quit():
-    global win
-    global lose
-    global draw
-    userscore.append_row([win], table_range='B2')
-    userscore.append_row([lose], table_range='C2')
-    userscore.append_row([level], table_range='D2')
+# def quit():
+#     global win
+#     global lose
+#     global draw
+#     userscore.append_row([win], table_range='B2')
+#     userscore.append_row([lose], table_range='C2')
+#     userscore.append_row([level], table_range='D2')
+#     exit()
 
 
 def user_win():
     global win
     win += 1    
-    userscore.update_cell(1,1, win)  # for total games played
+    #userscore.update_cell(1,1, win)  # for total games played
     #userscore.append_row([win], table_range='B2')
     play_game()
 
 def user_lose():
     global lose    
     lose += 1    
-    userscore.update_cell(1,2, lose)
+    #userscore.update_cell(1,2, lose)
     #userscore.append_row([lose], table_range='C2')
     play_game()
 
 def user_draw():
     global level    
     level += 1    
-    userscore.update_cell(1,3, level)
+    #userscore.update_cell(1,3, level)
     #userscore.append_row([level], table_range='D2')
     play_game()
 
 def user_total():
     global total    
     total += 1    
-    userscore.update_cell(1,4, total)
+    #userscore.update_cell(1,4, total)
     play_game()
 
 
 
-def reset():
-    userscore.update_cell(1,1, "0")
-    userscore.update_cell(1,2, "0")
-    userscore.update_cell(1,3, "0")
-    userscore.update_cell(1,4, "=SUM(A1:C1)")
+# def reset():
+#     userscore.update_cell(1,1, "0")
+#     userscore.update_cell(1,2, "0")
+#     userscore.update_cell(1,3, "0")
+#     userscore.update_cell(1,4, "=SUM(A1:C1)")
 
 def clear():
     """
@@ -236,6 +235,6 @@ def print_slow(ltr):
 
 
 
-reset()
+
 intro()
 # play_game()
