@@ -50,7 +50,7 @@ def intro():
     print('')
     time.sleep(2)
     clear()
-    username = input("Please enter username: \n")
+    username = input("Please enter username: \n").upper()
     # userscore.update_cell(3,1, username) comment out for testing
     userinfo.append_row([username], table_range='A2')
     time.sleep(2)
@@ -97,7 +97,6 @@ def instructions():
     print(" 4) Scissors win against paper.")
     print(" 5) Paper wins against rock.")
     print(" 6) Enter Q to stop the game.")
-    print(" 7) Enter C to to clear the console.")
     print(' ')
     time.sleep(3)
     print("Would you like to Play the game or Quit and exit?")
@@ -190,11 +189,6 @@ def play_game():
 #     userscore.append_row([level], table_range='D2')
 #     exit()
 
-def get_score():
-    print(userinfo.get_all_records())
-    intro()
-
-
 
 def user_win():
     global win
@@ -248,6 +242,6 @@ def print_slow(ltr):
 
 
 
-get_score()
+
 intro()
 # play_game()
