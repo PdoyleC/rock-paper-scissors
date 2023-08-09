@@ -8,6 +8,7 @@ import time
 import gspread
 from google.oauth2.service_account import Credentials
 
+
 choice = ["R", "P", "S"]
 computer = choice[randint(0,2)]
 level = 0
@@ -43,6 +44,7 @@ def intro():
     User can pick to play or read the instructions.
     """
     clear()
+    global username
     print('')
     print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
@@ -50,9 +52,9 @@ def intro():
     print('')
     time.sleep(2)
     clear()
-    username = input("Please enter username: \n").upper()
+    username = input("Please enter username: \n")
     # userscore.update_cell(3,1, username) comment out for testing
-    userinfo.append_row([username], table_range='A2')
+    # userinfo.append_row([username], table_range='A2')
     time.sleep(2)
     clear()
     print("\nWelcome " + username)
@@ -65,6 +67,7 @@ def menu():
     print("\nPlease enter your selection by pressing the corresponding number.")
     print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n2)....Press 2 and then Enter to read the instruction's.")
+    print("\n5)....Press 5 and then Enter to Exit the Game.")
     #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
     #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
     #print("\nWould you like to read the Game Instructions " + username)
@@ -76,8 +79,9 @@ def menu():
             play_game()
         elif answer == "2":
             instructions()
-        if answer == "3":
-            get_score()
+        if answer == "5":
+            print("Thank you for playing the game.")
+            exit()
             
         else:
             print('')
@@ -98,9 +102,9 @@ def instructions():
     print(" 5) Paper wins against rock.")
     print(" 6) Enter Q to stop the game.")
     print(' ')
-    time.sleep(3)
-    print("Would you like to Play the game or Quit and exit?")
-    answer = input("Enter P to play or M to go to the Menu\n").upper()
+    time.sleep(2)
+    print("Would you like to Play the game, go back to the Menu or Exit?")
+    answer = input("Enter P to play\nEnter M to go to the Menu\nEnter E to exit game.\n").upper()
     print('')
     while True:
         if answer == "P":
@@ -108,10 +112,13 @@ def instructions():
         elif answer == "M":
             menu()
             break
+        if answer =="E":
+            print("Thank you for playing the game.")
+            exit()
 
         else:
             print('')
-            print("Please enter a valid input of either P to play or M to go to the Menu\n")
+            print("Please enter a valid input of either P to play, M to go to the Menu or E to exit\n")
             answer = input("").upper()
     clear()
 
@@ -119,51 +126,66 @@ def instructions():
 def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
-    time.sleep(5)
     clear()
-    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors. \nEnter Q to quit the game. \nEnter M to go back to the Menu.\n").upper()
+    global total    
+    global win
+    total += 1 
+    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors. \nEnter Q to quit the game. \nEnter M to go back to the Menu.\n\n").upper()
     if user == computer:
-        print("It's a Draw! ")
+        print("It's a Draw! "+ username)
         user_draw()
+        input("\u001b[37mPress Enter to continue...")
     elif user == "R":
         if computer == "P":
             print("You choose Rock, Computer picked Paper")
-            print("\u001b[31mYou Lose!")
-            user_lose()
+            print("\u001b[31mYou Lose! " + username)
+            input("\u001b[37mPress Enter to continue...")
+            play_game()
         else:            
             print("You choose Rock, Computer picked Scissors")
-            print("\u001b[32mYou Win!")
-            user_win()
+            print("\u001b[32mYou Win! " + username)
+            win += 1
+            input("\u001b[37mPress Enter to continue...")
+            play_game()
     elif user == "P":
         if computer == "S":
             print("You choose Paper, Computer picked Scissors")
-            print("\u001b[31mYou Lose!")
-            user_lose()
+            print("\u001b[31mYou Lose! " + username)
+            input("\u001b[37mPress Enter to continue...")
+            play_game()
         else:
             print("You choose Paper, Computer picked Rock")
-            print("\u001b[32mYou Win!")
-            user_win()
+            print("\u001b[32mYou Win! " + username)
+            win += 1
+            input("\u001b[37mPress Enter to continue...")
+            play_game()
     elif user == "S":
         if computer == "R":
             print("You choose Scissors, Computer picked Rock")
-            print("\u001b[31mYou Lose")
-            user_lose()
+            print("\u001b[31mYou Lose " + username)
+            input("\u001b[37mPress Enter to continue...")
+            play_game()
         else:            
             print("You choose Scissors, Computer picked Paper")
-            print("\u001b[32mYou Win!")
-            user_win()
+            print("\u001b[32mYou Win! " + username)
+            win += 1
+            input("\u001b[37mPress Enter to continue...")
+            play_game()
 
     elif user == "Q":
             clear()
+            userinfo.append_row([username], table_range='A2')
             userinfo.append_row([win], table_range='H2')
+            userinfo.append_row([total], table_range='T2')
             print("Thank you for playing the game.")
             time.sleep(5)
-            # intro()
-            exit()
+            menu()
     elif user == "C":
             clear() 
     elif user == "M":
+            userinfo.append_row([username], table_range='A2')
             userinfo.append_row([win], table_range='H2')
+            userinfo.append_row([total], table_range='T2')
             menu()
     else:
         print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
