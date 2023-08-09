@@ -44,11 +44,11 @@ def intro():
     """
     clear()
     print('')
-    print_slow("\t\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    print_slow("\t\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
-    time.sleep(5)
+    time.sleep(2)
     clear()
     username = input("Please enter username: \n")
     # userscore.update_cell(3,1, username) comment out for testing
@@ -59,6 +59,9 @@ def intro():
     menu()
 
 def menu():
+    """ 
+    User can picks there option on where to go.
+    """
     print("\nPlease enter your selection by pressing the corresponding number.")
     print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n2)....Press 2 and then Enter to read the instruction's.")
@@ -73,6 +76,8 @@ def menu():
             play_game()
         elif answer == "2":
             instructions()
+        if answer == "3":
+            get_score()
             
         else:
             print('')
@@ -94,7 +99,7 @@ def instructions():
     print(" 6) Enter Q to stop the game.")
     print(" 7) Enter C to to clear the console.")
     print(' ')
-    time.sleep(8)
+    time.sleep(3)
     print("Would you like to Play the game or Quit and exit?")
     answer = input("Enter P to play or M to go to the Menu\n").upper()
     print('')
@@ -107,7 +112,7 @@ def instructions():
 
         else:
             print('')
-            print("Please enter a valid input of either Y to play or N to Quit\n")
+            print("Please enter a valid input of either P to play or M to go to the Menu\n")
             answer = input("").upper()
     clear()
 
@@ -117,7 +122,7 @@ def play_game():
     computer = choice[randint(0,2)]
     time.sleep(5)
     clear()
-    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors or (Q to quit the game)\n").upper()
+    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors. \nEnter Q to quit the game. \nEnter M to go back to the Menu.\n").upper()
     if user == computer:
         print("It's a Draw! ")
         user_draw()
@@ -157,7 +162,10 @@ def play_game():
             # intro()
             exit()
     elif user == "C":
-            clear()            
+            clear() 
+    elif user == "M":
+            userinfo.append_row([win], table_range='H2')
+            menu()
     else:
         print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
         time.sleep(3)
@@ -181,6 +189,11 @@ def play_game():
 #     userscore.append_row([lose], table_range='C2')
 #     userscore.append_row([level], table_range='D2')
 #     exit()
+
+def get_score():
+    print(userinfo.get_all_records())
+    intro()
+
 
 
 def user_win():
@@ -235,6 +248,6 @@ def print_slow(ltr):
 
 
 
-
+get_score()
 intro()
 # play_game()
