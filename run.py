@@ -64,12 +64,13 @@ def menu():
     """ 
     User can picks there option on where to go.
     """
+    clear()
     print("\nPlease enter your selection by pressing the corresponding number.")
     print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n2)....Press 2 and then Enter to read the instruction's.")
-    print("\n5)....Press 5 and then Enter to Exit the Game.")
     #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
     #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
+    print("\n5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
     answer = input("\n\nPlease enter your choice - .\n").upper()
     # print(userscore.cell(3,1).value) this works
@@ -100,7 +101,6 @@ def instructions():
     print(" 3) Rock wins against scissors.")
     print(" 4) Scissors win against paper.")
     print(" 5) Paper wins against rock.")
-    print(" 6) Enter Q to stop the game.")
     print(' ')
     time.sleep(2)
     print("Would you like to Play the game, go back to the Menu or Exit?")
@@ -111,8 +111,8 @@ def instructions():
             play_game()
         elif answer == "M":
             menu()
-            break
         if answer =="E":
+            menu()
             print("Thank you for playing the game.")
             exit()
 
