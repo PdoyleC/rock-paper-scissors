@@ -109,7 +109,7 @@ def instructions():
     print(" 4) Scissors win against paper.")
     print(" 5) Paper wins against rock.")
     print(' ')
-    time.sleep(2)
+    print(' ')
     print("Would you like to Play the game, go back to the Menu or Exit?")
     answer = input("Enter P to play\nEnter M to go to the Menu\nEnter E to exit game.\n").upper()
     print('')
