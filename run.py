@@ -87,6 +87,7 @@ def menu():
         elif answer == "2":
             instructions()
         if answer == "5":
+            clear()
             print("Thank you for playing the game.")
             exit()
         elif answer =="4":
