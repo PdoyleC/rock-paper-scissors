@@ -57,7 +57,7 @@ def enter_username():
     clear() 
     reset()
     global username 
-    username = input("Please enter username: \n")
+    username = input("Please enter username: \n>> ")
     # userscore.update_cell(3,1, username) comment out for testing
     # userinfo.append_row([username], table_range='A2')
     time.sleep(2)
@@ -78,7 +78,7 @@ def menu():
     print("\n4)....Press 4 and then Enter to Enter new Username.")
     print("\n5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
-    answer = input("\n\nPlease enter your choice - .\n").upper()
+    answer = input("\n\nPlease enter your choice.\n>> ").upper()
     # print(userscore.cell(3,1).value) this works
     print('')
     while True:
