@@ -223,7 +223,13 @@ def play_game():
 
 
 
-
+def print_score():
+    print(userinfo.range('A2:A28'))
+    time.sleep(5)
+    for cell in userinfo.range('A2:A28'):
+        print(cell.value)
+    time.sleep(5)
+    exit()
 
 
 
@@ -295,6 +301,7 @@ def print_slow(ltr):
 
 
 
+print_score()
 reset()
 intro()
 # play_game()
