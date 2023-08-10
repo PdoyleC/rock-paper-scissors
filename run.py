@@ -138,13 +138,27 @@ def play_game():
     global total
     global win
     print("Enter Q to save your results and Exit the game entirety.")
-    print("Enter M to save your results and to go back to the Menu.")
-    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors.\n\n>>").upper()
-    if user == computer:
+    print("Enter M to save your results and go back to the Menu.")
+    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors.\n\n>> ").upper()
+    if (user == 'R' and computer == 'R'):
+        print("You choose Rock, Computer picked Rock")
         print("It's a Draw! "+ username)
         total += 1
         input("\u001b[37mPress Enter to continue...")
         play_game()
+    elif (user == 'P' and computer == 'P'):
+        print("You choose Paper, Computer picked Paper")
+        print("It's a Draw! "+ username)
+        total += 1
+        input("\u001b[37mPress Enter to continue...")
+        play_game()
+    elif (user == 'S' and computer == 'S'):
+        print("You choose Scissors, Computer picked Scissors")
+        print("It's a Draw! "+ username)
+        total += 1
+        input("\u001b[37mPress Enter to continue...")
+        play_game()
+    
     elif user == "R":
         if computer == "P":
             print("You choose Rock, Computer picked Paper")
