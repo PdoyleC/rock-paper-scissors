@@ -57,7 +57,7 @@ def enter_username():
     clear() 
     reset()
     global username 
-    username = input("Please enter username: \n>> ")
+    username = input("Please enter username: \n>> ").upper()
     # userscore.update_cell(3,1, username) comment out for testing
     # userinfo.append_row([username], table_range='A2')
     time.sleep(2)
@@ -219,16 +219,30 @@ def play_game():
             menu()
     else:
         print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
-        time.sleep(3)
+        
 
 
 
 def print_score():
-    print(userinfo.range('A2:A28'))
-    time.sleep(5)
-    for cell in userinfo.range('A2:A28'):
-        print(cell.value)
-    time.sleep(5)
+    # print(userinfo.range('A2:A28'))
+    # time.sleep(5)
+    # for cell in userinfo.range('A2:A28'):
+    #     print(cell.value)
+    # time.sleep(5)
+    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    # print(userinfo.acell('A12').value)
+    print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    print('Rows: ',userinfo.row_count)
+
+
+    # username = 'Philip'  don't work
+    # cell = userinfo.find(username) don't work
+    # cell don't work
+    # key_row = cell.row don't work
+    # key_col = cell.col don't work
+    # print(key_col,key_row) don't work
+    # print(userinfo.row_value(username)) don't work
+
     exit()
 
 
@@ -301,7 +315,7 @@ def print_slow(ltr):
 
 
 
-print_score()
+#print_score()
 reset()
 intro()
 # play_game()
