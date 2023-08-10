@@ -231,12 +231,37 @@ def play_game():
 def print_score():
     # print(userinfo.range('A2:A28'))
     # time.sleep(5)
-    for cell in userinfo.range('A2:A28'):
-        print(cell.value)
     
-    sales = sheet.worksheet("sales")
-    column = sales.col_values(0)
+    # userinfo.resize(10,10) # resize rows and columns of sheet
+    # df = userinfo.get_as_df() # create the dataframe 
+    # print(df)
+
+    userinfo = SHEET.worksheet("userinfo")
+
+    column = userinfo.col_values(1)
     print(column)
+
+    # for cell in userinfo.range('A2:A8'):
+    #     print(cell.value)
+    # for cell in userinfo.range('H2:H8'):
+    #     print(cell.value)
+    # for cell in userinfo.range('T2:T8'):
+    #     print(cell.value)
+        
+    columns = []
+    for ind in range (1, 11):
+        column = userinfo.col_values(ind)
+        columns.append(column[-5:])
+        print(columns)
+        print(ind)
+    # print(name, won, complete)
+    # print("%s you won %s games out of %s" % (name, won, complete))
+    
+    
+    
+    # sales = sheet.worksheet("sales")
+    # userinfo = sales.col_values(0)
+    # print(userinfo)
 
     # results = userinfo.values().get(spreadsheetId=SPREADSHEET_ID, range="userinfo!A1:A20").execute()
     # # values = result.get("values", [])
