@@ -27,9 +27,12 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
+SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
 
 userinfo = SHEET.worksheet('userinfo')
 userscore = SHEET.worksheet('userscore')
+
+
 
 # data = sales.get_all_values()
 
@@ -228,15 +231,39 @@ def play_game():
 def print_score():
     # print(userinfo.range('A2:A28'))
     # time.sleep(5)
-    # for cell in userinfo.range('A2:A28'):
+    for cell in userinfo.range('A2:A28'):
+        print(cell.value)
+    
+    sales = sheet.worksheet("sales")
+    column = sales.col_values(0)
+    print(column)
+
+    # results = userinfo.values().get(spreadsheetId=SPREADSHEET_ID, range="userinfo!A1:A20").execute()
+    # # values = result.get("values", [])
+    # values = result.get('values', [])
+    # for row in values:
+    #         # Print columns A and H and T, which correspond to indices 0 and 7.
+    #         print('%s, %s, %s' % (row[0], row[7], row[19]))
+
+    # for row in values:
+    #     print(row)
+    # for cell in userinfo.range('A2:A28','H2:H28','T2:T28'):
     #     print(cell.value)
     # time.sleep(5)
     # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
     # print(userinfo.acell('A12').value)
-    print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    print(userinfo.get('A3:T16'))
-    print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    print('Rows: ',userinfo.row_count)
+    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    # username = input("Please enter username: \n>> ").upper()
+    # userinfo.append_row([username], table_range='A2')
+    # userrow = userinfo.row_values(5)
+    # userrow2 = userinfo.get_all_records()
+    # print(userrow)
+    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    # print(userrow2)
+    #print(userinfo.get('A3:T16'))
+    #userinfo.get([username], table_range='A2:A200')
+    #print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    #print('Rows: ',userinfo.row_count)
 
 
     # username = 'Philip'  don't work
@@ -319,7 +346,7 @@ def print_slow(ltr):
 
 
 
-#print_score()
+print_score()
 reset()
 intro()
 # play_game()
