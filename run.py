@@ -45,9 +45,9 @@ def intro():
     """
     clear()
     print('')
-    #print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    #print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(2)
     clear()
@@ -137,7 +137,9 @@ def play_game():
     clear()
     global total
     global win
-    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors. \nEnter Q to quit the game. \nEnter M to go back to the Menu.\n\n").upper()
+    print("Enter Q to save your results and Exit the game entirety.")
+    print("Enter M to save your results and to go back to the Menu.")
+    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors.\n\n>>").upper()
     if user == computer:
         print("It's a Draw! "+ username)
         total += 1
@@ -192,8 +194,7 @@ def play_game():
             userinfo.append_row([win], table_range='H2')
             userinfo.append_row([total], table_range='T2')
             print("Thank you for playing the game.")
-            time.sleep(5)
-            menu()
+            exit()
     elif user == "C":
             clear() 
     elif user == "M":
