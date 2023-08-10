@@ -45,9 +45,9 @@ def intro():
     """
     clear()
     print('')
-    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    #print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    #print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(2)
     clear()
@@ -219,6 +219,8 @@ def play_game():
             menu()
     else:
         print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
+        input("\u001b[37mPress Enter to continue...")
+        play_game()
         
 
 
@@ -231,6 +233,8 @@ def print_score():
     # time.sleep(5)
     # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
     # print(userinfo.acell('A12').value)
+    print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    print(userinfo.get('A3:T16'))
     print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
     print('Rows: ',userinfo.row_count)
 
