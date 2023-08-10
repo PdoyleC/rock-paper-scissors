@@ -32,6 +32,14 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 Happy coding!
 
 
+# Technologies Used
+- Google Spreadsheets:
+- Google Drive API:
+- Google Sheets API:
+- gspread: Python API for Google Sheets
+- Google Auth: Google authentication library
+- GitHub: holds the project repository
+- Heroku: used to deploy the application
 
 
 
