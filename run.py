@@ -248,12 +248,13 @@ def print_score():
     # for cell in userinfo.range('T2:T8'):
     #     print(cell.value)
         
+    
     columns = []
-    for ind in range (1, 11):
+    for ind in range (1, 21):
         column = userinfo.col_values(ind)
-        columns.append(column[-5:])
+        columns.append(column[-3:])
         print(columns)
-        print(ind)
+        # print(ind)
     # print(name, won, complete)
     # print("%s you won %s games out of %s" % (name, won, complete))
     
