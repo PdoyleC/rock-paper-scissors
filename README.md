@@ -1,7 +1,15 @@
 
 
-## Colour
+
+## Introduction
+- Rock, Paper, Scissors is a game that can solve any conflict and is quite possibly the best sport in the entire world!
+- It is a 2 player game and can be played anywhere.
 - 
+
+## Colour
+- Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a lose. 
+- A draw result was left as white.
+
 ![Font Colour](documentation/colours.png)
 
 ## Deployment

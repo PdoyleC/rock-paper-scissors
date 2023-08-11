@@ -48,9 +48,9 @@ def intro():
     """
     clear()
     print('')
-    #print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
     print('')
-    #print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
     print('')
     time.sleep(2)
     clear()
