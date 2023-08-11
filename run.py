@@ -123,7 +123,6 @@ def instructions():
         elif answer == "M":
             menu()
         if answer =="E":
-            menu()
             print("Thank you for playing the game.")
             exit()
 
