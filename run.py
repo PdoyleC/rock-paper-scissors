@@ -250,9 +250,9 @@ def print_score():
         
     
     columns = []
-    for ind in range (1, 21):
+    for ind in range (1, 2):
         column = userinfo.col_values(ind)
-        columns.append(column[-3:])
+        columns.append(column[-5:])
         print(columns)
         # print(ind)
     # print(name, won, complete)
@@ -372,7 +372,7 @@ def print_slow(ltr):
 
 
 
-print_score()
+# print_score()
 reset()
 intro()
 # play_game()

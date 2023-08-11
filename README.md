@@ -1,38 +1,42 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
-
-## Reminders
-
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
 
 
-# Technologies Used
+## Colour
+- 
+![Font Colour](documentation/colours.png)
+
+## Deployment
+- Heroku was used to deploy the website.
+- It is assumed here that GitHub accounts are already set up.
+- In CodeAnyWhere a \n needs to added at the end of the text inside the input method, for a software quirk.
+- To create our list of requirements, we  use the following command in the terminal.
+- The requirements.txt file was populated using the command "pip3 freeze > requirements.txt' in CodeAnyWhere.
+- Commit them and push the changes up to Github from CodeAnyWhere.
+- Create our account with Heroku [Heroku](https://id.heroku.com/login).
+- Heroku will then send you a confirmation email, click the linl and login.
+- In Heroku clicking on the button 'New' and select 'Create New App'.
+- The app name on Heroku has to be unique.
+- Then you can select your region.
+- Then click “Create app”.
+- Go the settings tabs.
+- Then config vars and upload the creds.json file.
+- In the field for key, enter CREDS.
+- Copy the entire creds.json file, and paste it into the value field here.
+- Click “Add”.
+- Next step is to Add buildpack”. The 1st buildpack is Python, then click “Save changes”.
+- The other buildpack  we need is called node.js click Save again.
+- The order for the buildpacks is important also so its Python on top, and node.js underneath.
+- Project settings are completed, Next step is in the deploy section.
+- Github was selectted, for deployment method.
+- Connect to GitHut, and search for the Github repository name. Then click connect.
+- From here you can select Automatic or Manual deploy.
+- Automatic deploy will re-deploy the application every time the project is "git pushed".
+- If you select "Manual deploy", after the project has been built, click "view" to see the deployed page.
+- “App was successfully deployed” message will appear, and a link to the deployed app.
+- Click on the link to test for error's.
+
+
+
+## Technologies Used
 - Google Spreadsheets:
 - Google Drive API:
 - Google Sheets API:
@@ -43,7 +47,7 @@ Happy coding!
 
 
 
-# Credits
+## Credits
 - Google Developers site was a great tool for research to access and edit Google sheet: [Google Developers](https://developers.google.com/sheets/api/guides/create).
 - To create font colour and background colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 - To transfer variables from one function to another  : [stackoverflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
