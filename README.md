@@ -1,6 +1,11 @@
 
 
 
+
+
+[Link to live project](https://rock-paper-scissorspp3-18513f12fbb5.herokuapp.com/)
+
+
 ## Introduction
 - Rock, Paper, Scissors is a game that can solve any conflict and is quite possibly the best sport in the entire world!
 - It is a 2 player game and can be played anywhere.
@@ -63,7 +68,9 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 ![Flow Chart](documentation/flowchart.png)
 
-
+## Testing
+- Testing has been implemented throughout the entire project mainly debugging through running the program in the CodeAnyWhere terminal.
+- Tested in both CodeAnyWhere terminal and Heroku terminal.
 
 ## Deployment
 - Heroku was used to deploy the website.
