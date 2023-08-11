@@ -30,13 +30,6 @@ SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
 
 userinfo = SHEET.worksheet('userinfo')
-userscore = SHEET.worksheet('userscore')
-
-
-
-# data = sales.get_all_values()
-
-# print(data)
 
 
 
@@ -48,9 +41,9 @@ def intro():
     """
     clear()
     print('')
-    print_slow("\t\t\tWelcome to Rock Paper Scissors \n") #comment out for testing
+    print_slow("\t\t\tWelcome to Rock Paper Scissors \n")
     print('')
-    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n") #comment out for testing
+    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n")
     print('')
     time.sleep(2)
     clear()
@@ -123,6 +116,7 @@ def instructions():
         elif answer == "M":
             menu()
         if answer =="E":
+            clear()
             print("Thank you for playing the game.")
             exit()
 

@@ -4,13 +4,26 @@
 ## Introduction
 - Rock, Paper, Scissors is a game that can solve any conflict and is quite possibly the best sport in the entire world!
 - It is a 2 player game and can be played anywhere.
-- 
+- The rules are simple: rock beats scissors, scissors beats paper, and paper beats rock.
 
 ## Colour
 - Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a lose. 
 - A draw result was left as white.
 
 ![Font Colour](documentation/colours.png)
+
+
+## Google Sheet Access 
+
+Googlesheet is used to store, usernames and game won along with total games played.
+
+
+## Flow-Chart
+A flow chart for this game created with the help of Lucid [Web-Site](https://lucid.app/documents#/dashboard)
+
+![Flow Chart](documentation/flowchart.png)
+
+
 
 ## Deployment
 - Heroku was used to deploy the website.
