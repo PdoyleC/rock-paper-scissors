@@ -51,6 +51,10 @@
 ### New User Name
 - A new player can enter there username without exiting the game and starting the game again.
 
+
+## Features to implement in future
+
+
 ## Colour
 - Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a lose. 
 - A draw result was left as white.
@@ -71,6 +75,15 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 ## Testing
 - Testing has been implemented throughout the entire project mainly debugging through running the program in the CodeAnyWhere terminal.
 - Tested in both CodeAnyWhere terminal and Heroku terminal.
+- CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
+
+## Bug
+- There was a bug when saving the results to google sheets. I the image below it can be seen that the results for Tom's first go is in Row 2 and the results for wins and total games are also in row 2. When the game is played again the results for win and total games don't go into the next row they went into Column A. The same happened for the 3rd and 4ft and so on. 
+- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue would happen. 
+- The work around for this was to append the results for wins in column H and for total games into column T.
+
+![Sheets Bug](documentation/bug.png)
+![Sheets Bug](documentation/bug1.png)
 
 ## Deployment
 - Heroku was used to deploy the website.
@@ -79,7 +92,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - To create our list of requirements, we  use the following command in the terminal.
 - The requirements.txt file was populated using the command "pip3 freeze > requirements.txt' in CodeAnyWhere.
 - Commit them and push the changes up to Github from CodeAnyWhere.
-- Create our account with Heroku [Heroku](https://id.heroku.com/login).
+- Create our account with [Heroku](https://id.heroku.com/login).
 - Heroku will then send you a confirmation email, click the linl and login.
 - In Heroku clicking on the button 'New' and select 'Create New App'.
 - The app name on Heroku has to be unique.
@@ -105,13 +118,11 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 
 ## Technologies Used
-- Google Spreadsheets:
-- Google Drive API:
-- Google Sheets API:
-- gspread: Python API for Google Sheets
-- Google Auth: Google authentication library
-- GitHub: holds the project repository
-- Heroku: used to deploy the application
+- [Google Spreadsheets](https://docs.google.com/spreadsheets/create)
+- [Python](https://www.python.org/)
+- [GitHub](https://github.com/)
+- [Heroku](https://www.heroku.com/about)
+- [LucidCharts](https://www.lucidchart.com/pages/)
 
 
 
