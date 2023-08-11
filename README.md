@@ -6,6 +6,46 @@
 - It is a 2 player game and can be played anywhere.
 - The rules are simple: rock beats scissors, scissors beats paper, and paper beats rock.
 
+
+## Existing Features
+
+### Welcome Message
+- When a new game starts the welcome message is displayed.
+- The user is welcomed with an emoji of a Rock, Paper and Scissors.
+
+### Username Input
+- The user is asked for a user name, this user name will be used to save there score.
+
+### Menu selection
+- After the user name is entered the menu selection appears.
+- From the menu area -
+    * The user can play the game.
+    * Read the instructions.
+    * Read there score. 
+    * Change user name.
+    * Exit the game
+
+<details>
+<summary>Features Image</summary>
+
+![Welcome Message](documentation/features.jpg)
+![Enter User Name](documentation/features1.jpg)
+![Menu](documentation/features4.jpg)
+![Game Play](documentation/features2.jpg)
+
+</details>
+
+### Game Area
+- In the game area the user is asked to enter either R for Rock, P for Paper, and S for Scissors.
+- If another letter or number is entered as error will appear, That input isn't valid. Please enter 'R' OR 'P' OR 'S'!".
+- The computers choice is random, and the computers result is checked againest the user choice.
+- The users and computers choice is displayed to the user and if it's a Win, Loae or Draw.
+- The user has a choice to continue to play for ever, or they can exit the game or go back to the menu.
+- It is at this point the number of wins and total games played are saved to google sheets for later display.
+
+### New User Name
+- A new player can enter there username without exiting the game and starting the game again.
+
 ## Colour
 - Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a lose. 
 - A draw result was left as white.

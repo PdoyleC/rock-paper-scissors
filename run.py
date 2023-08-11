@@ -30,6 +30,7 @@ SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
 
 userinfo = SHEET.worksheet('userinfo')
+userinfo = SHEET.worksheet('userinfo')
 
 
 
@@ -40,6 +41,7 @@ def intro():
     User can pick to play or read the instructions.
     """
     clear()
+    print('')
     print('')
     print_slow("\t\t\tWelcome to Rock Paper Scissors \n")
     print('')
@@ -52,13 +54,14 @@ def intro():
 def enter_username():  
     clear() 
     reset()
-    global username 
-    username = input("Please enter username: \n>> ").upper()
+    global username
+    print('')
+    username = input(" Please enter username: \n>> ").upper()
     # userscore.update_cell(3,1, username) comment out for testing
     # userinfo.append_row([username], table_range='A2')
     time.sleep(2)
     clear()
-    print("\nWelcome " + username)
+    print("\n Welcome " + username)
     menu()
 
 def menu():
@@ -84,13 +87,13 @@ def menu():
             instructions()
         if answer == "5":
             clear()
-            print("Thank you for playing the game.")
+            print(" Thank you for playing the game.")
             exit()
         elif answer =="4":
             enter_username()
         else:
             print('')
-            print("Please enter a valid input of either 1, 2, 4 or 5\n")
+            print(" Please enter a valid input of either 1, 2, 4 or 5\n")
             answer = input("").upper()
 
 
@@ -122,7 +125,7 @@ def instructions():
 
         else:
             print('')
-            print("Please enter a valid input of either P to play, M for Menu or E to exit\n")
+            print(" Please enter a valid input of either P to play, M for Menu or E to exit\n")
             answer = input("").upper()
     clear()
 
@@ -133,69 +136,69 @@ def play_game():
     clear()
     global total
     global win
-    print("Enter Q to save your results and Exit the game entirety.")
-    print("Enter M to save your results and go back to the Menu.")
-    user = input("\u001b[37m\nPlease choose _ R for Rock, P for Paper, and S for Scissors.\n\n>> ").upper()
+    print(" Enter Q to save your results and Exit the game entirety.")
+    print(" Enter M to save your results and go back to the Menu.")
+    user = input("\u001b[37m\n Please choose _ R for Rock, P for Paper, and S for Scissors.\n\n>> ").upper()
     if (user == 'R' and computer == 'R'):
         print("You choose Rock, Computer picked Rock")
         print("It's a Draw! "+ username)
         total += 1
-        input("\u001b[37mPress Enter to continue...")
+        input("\u001b[37m Press Enter to continue...")
         play_game()
     elif (user == 'P' and computer == 'P'):
-        print("You choose Paper, Computer picked Paper")
-        print("It's a Draw! "+ username)
+        print(" You choose Paper, Computer picked Paper")
+        print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37mPress Enter to continue...")
+        input("\u001b[37m Press Enter to continue...")
         play_game()
     elif (user == 'S' and computer == 'S'):
-        print("You choose Scissors, Computer picked Scissors")
-        print("It's a Draw! "+ username)
+        print(" You choose Scissors, Computer picked Scissors")
+        print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37mPress Enter to continue...")
+        input("\u001b[37m Press Enter to continue...")
         play_game()
     
     elif user == "R":
         if computer == "P":
-            print("You choose Rock, Computer picked Paper")
-            print("\u001b[31mYou Lose! " + username)
-            input("\u001b[37mPress Enter to continue...")
+            print(" You choose Rock, Computer picked Paper")
+            print("\u001b[31m You Lose! " + username)
+            input("\u001b[37m Press Enter to continue...")
             total += 1
             play_game()
         else:            
-            print("You choose Rock, Computer picked Scissors")
+            print(" You choose Rock, Computer picked Scissors")
             print("\u001b[32mYou Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37mPress Enter to continue...")
+            input("\u001b[37m Press Enter to continue...")
             play_game()
     elif user == "P":
         if computer == "S":
-            print("You choose Paper, Computer picked Scissors")
-            print("\u001b[31mYou Lose! " + username)
-            input("\u001b[37mPress Enter to continue...")
+            print(" You choose Paper, Computer picked Scissors")
+            print("\u001b[31m You Lose! " + username)
+            input("\u001b[37m Press Enter to continue...")
             total += 1
             play_game()
         else:
-            print("You choose Paper, Computer picked Rock")
-            print("\u001b[32mYou Win! " + username)
+            print(" You choose Paper, Computer picked Rock")
+            print("\u001b[32m You Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37mPress Enter to continue...")
+            input("\u001b[37m Press Enter to continue...")
             play_game()
     elif user == "S":
         if computer == "R":
-            print("You choose Scissors, Computer picked Rock")
-            print("\u001b[31mYou Lose " + username)
-            input("\u001b[37mPress Enter to continue...")
+            print(" You choose Scissors, Computer picked Rock")
+            print("\u001b[31m You Lose " + username)
+            input("\u001b[37m Press Enter to continue...")
             total += 1
             play_game()
         else:            
-            print("You choose Scissors, Computer picked Paper")
+            print(" You choose Scissors, Computer picked Paper")
             print("\u001b[32mYou Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37mPress Enter to continue...")
+            input("\u001b[37m Press Enter to continue...")
             play_game()
 
     elif user == "Q":
@@ -203,7 +206,7 @@ def play_game():
             userinfo.append_row([username], table_range='A2')
             userinfo.append_row([win], table_range='H2')
             userinfo.append_row([total], table_range='T2')
-            print("Thank you for playing the game.")
+            print(" Thank you for playing the game.")
             exit()
     elif user == "C":
             clear() 
@@ -214,8 +217,9 @@ def play_game():
             reset()
             menu()
     else:
-        print("That input isn't valid. Please enter 'R' OR 'P' OR 'S'!")
-        input("\u001b[37mPress Enter to continue...")
+        print(" That input isn't valid.")
+        print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
+        input("\u001b[37m Press Enter to continue...")
         play_game()
         
 
