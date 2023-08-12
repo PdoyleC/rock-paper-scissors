@@ -43,7 +43,7 @@ def intro():
     clear()
     print('')
     print('')
-    print_slow("\t\t\tWelcome to Rock Paper Scissors \n")
+    print_slow("\n\n\n\t\t\tWelcome to Rock Paper Scissors \n")
     print('')
     print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n")
     print('')

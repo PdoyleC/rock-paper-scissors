@@ -114,7 +114,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - If you select "Manual deploy", after the project has been built, click "view" to see the deployed page.
 - “App was successfully deployed” message will appear, and a link to the deployed app.
 - Click on the link to test for error's.
-
+ 
 
 
 ## Technologies Used
