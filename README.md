@@ -53,6 +53,7 @@
 
 
 ## Features to implement in future
+- Count the number of times the user entered P, R or S, to see if the user has a preference.
 
 
 ## Colour

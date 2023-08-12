@@ -6,6 +6,7 @@ from random import randint
 import sys
 import time
 import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 from google.oauth2.service_account import Credentials
 
 
@@ -18,6 +19,7 @@ total = 0
 
 
 SCOPE = [
+    "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
@@ -27,6 +29,9 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
+credentials = ServiceAccountCredentials.from_json_keyfile_name('creds.json', SCOPE)
+client = gspread.authorize(credentials)
+sheet = client.open('rock_paper_scissors').sheet1 
 SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
 
 userinfo = SHEET.worksheet('userinfo')
@@ -45,7 +50,7 @@ def intro():
     print('')
     print_slow("\n\n\n\t\t\tWelcome to Rock Paper Scissors \n")
     print('')
-    print_slow("\t\t\t      🪨  Vs 📄  Vs ✂️\n")
+    print_slow("\t\t\t\t🪨  Vs 📄  Vs ✂️\n")
     print('')
     time.sleep(2)
     clear()
@@ -58,8 +63,6 @@ def enter_username():
     print('')
     username = input(" Please enter username: \n>> ").upper()
     time.sleep(2)
-    clear()
-    print("\n Welcome " + username)
     menu()
 
 def menu():
@@ -67,15 +70,16 @@ def menu():
     User can picks there option on where to go.
     """
     clear()
-    print("\nPlease enter your selection by pressing the corresponding number.")
-    print("\n1)....Press 1 and then Enter to play Rock Paper Sicssors.")
-    print("\n2)....Press 2 and then Enter to read the instruction's.")
+    print("\n Welcome " + username)
+    print("\n Please enter your selection by pressing the corresponding number.")
+    print("\n 1)....Press 1 and then Enter to play Rock Paper Sicssors.")
+    print("\n 2)....Press 2 and then Enter to read the instruction's.")
     #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
     #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
-    print("\n4)....Press 4 and then Enter to Enter new Username.")
-    print("\n5)....Press 5 and then Enter to Exit the Game.")
+    print("\n 4)....Press 4 and then Enter to Enter new Username.")
+    print("\n 5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
-    answer = input("\n\nPlease enter your choice.\n>> ").upper()
+    answer = input("\n\n Please enter your choice.\n>> ").upper()
     # print(userscore.cell(3,1).value) this works
     print('')
     while True:
@@ -231,16 +235,24 @@ def print_score():
     # df = userinfo.get_as_df() # create the dataframe 
     # print(df)
 
-    userinfo = sheet.get_all_values("userinfo")
-    last_10_scores = user[-10]
+    data = sheet.get_all_values()
+    user_data = [row for row in data if row[0]]
+    if user_data:
+        last_10_scores = (user[-10] if len(user_data) > 10 else user_data)
+        total_wins = sum(int(row[7]) for row in last_10_scores)
 
-    print(last 10 scores)
+    print("Total wins: {total_wins}")
+
+    print(total_wins)
 
     userinfo = SHEET.worksheet("userinfo")
     column = userinfo.col_values(1)
-    # total_game = sum (col (19))
     print(column)
-    # print(total_game)
+
+
+
+
+
 
     # for cell in userinfo.range('A2:A8'):
     #     print(cell.value)
@@ -250,7 +262,7 @@ def print_score():
     #     print(cell.value)
         
     
-    # this code works
+    # # this code works
     # columns = []
     # for ind in range (1, 2):
     #     column = userinfo.col_values(ind)
@@ -387,7 +399,7 @@ def print_slow(ltr):
 
 
 
-print_score()
+# print_score()
 reset()
 intro()
 # play_game()
