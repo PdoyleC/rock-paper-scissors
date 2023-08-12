@@ -71,11 +71,11 @@ def menu():
     """
     clear()
     print("\n Welcome " + username)
-    print("\n Please enter your selection by pressing the corresponding number.")
+    print("\n Please enter your selection.")
     print("\n 1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n 2)....Press 2 and then Enter to read the instruction's.")
-    #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
-    print("\n 4)....Press 4 and then Enter to Enter new Username.")
+    print("\n 3)....Press 3 and then Enter to see your score.")
+    print("\n 4)....Press 4 and then Enter to Enter a new Username.")
     print("\n 5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
     answer = input("\n\n Please enter your choice.\n>> ").upper()
@@ -86,12 +86,15 @@ def menu():
             play_game()
         elif answer == "2":
             instructions()
+        if answer == "3":
+            username_to_search = username
+            print_score(username_to_search)
+        elif answer =="4":
+            enter_username()
         if answer == "5":
             clear()
             print(" Thank you for playing the game.\n\n")
             exit()
-        elif answer =="4":
-            enter_username()
         else:
             print('')
             print(" Please enter a valid input of either 1, 2, 4 or 5\n")
@@ -233,7 +236,7 @@ def print_score(username):
     # userinfo.resize(10,10) # resize rows and columns of sheet
     # df = userinfo.get_as_df() # create the dataframe 
     # print(df)
-
+    clear()
     data = sheet.get_all_values()
     username = username.lower()
 
@@ -246,8 +249,28 @@ def print_score(username):
         # for row in last_10_scores:
         #     print("username: {row[0]}, wins: {row[7]}, Total games: {row[19]}")
 
-        print(f"Total wins: {total_wins}")
-        print(f"Total Games: {total_games}")
+        print(f"Over a max of your last 10 Visits you have:")
+        print(f"Won: {total_wins} Games out of: {total_games} Games in total\n")
+        # print(f"Total Games played over your last 10 visits: {total_games}")
+        print("\n Press 1 and then Enter to search for a user name.")
+        print("\n Press 2 and then Enter return to the Menu Options.")
+        scoresearch = input("\n Please enter your choice.\n>> ").upper()
+        while True:
+            if scoresearch == "1":
+                username_to_search = input(" Enter a username: ")
+                print_score(username_to_search)
+            elif scoresearch == "2":
+                menu()
+
+            else:
+                print(" That input isn't valid.")
+                input("\u001b[37m \n Press Enter to continue to Menu Options...")
+                menu()
+
+    else:
+        print(" User not found.")
+        input("\u001b[37m \n Press Enter to continue to Menu Options...")
+        menu()
 
     
 
@@ -395,7 +418,7 @@ def print_slow(ltr):
         time.sleep(0.1)
 
 
-username_to_search = input("Enter a username: ")
-print_score(username_to_search)
+# username_to_search = input("Enter a username: ")
+# print_score(username_to_search)
 reset()
 intro()
