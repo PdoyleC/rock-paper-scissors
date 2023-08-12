@@ -45,7 +45,7 @@ def intro():
     print('')
     print_slow("\n\n\n\t\t\tWelcome to Rock Paper Scissors \n")
     print('')
-    print_slow("\t\t\t     🪨  Vs 📄  Vs ✂️\n")
+    print_slow("\t\t\t      🪨  Vs 📄  Vs ✂️\n")
     print('')
     time.sleep(2)
     clear()
@@ -57,8 +57,6 @@ def enter_username():
     global username
     print('')
     username = input(" Please enter username: \n>> ").upper()
-    # userscore.update_cell(3,1, username) comment out for testing
-    # userinfo.append_row([username], table_range='A2')
     time.sleep(2)
     clear()
     print("\n Welcome " + username)
@@ -87,7 +85,7 @@ def menu():
             instructions()
         if answer == "5":
             clear()
-            print(" Thank you for playing the game.")
+            print(" Thank you for playing the game.\n\n")
             exit()
         elif answer =="4":
             enter_username()
@@ -120,7 +118,7 @@ def instructions():
             menu()
         if answer =="E":
             clear()
-            print("Thank you for playing the game.")
+            print("Thank you for playing the game.\n\n")
             exit()
 
         else:
@@ -143,26 +141,26 @@ def play_game():
         print("You choose Rock, Computer picked Rock")
         print("It's a Draw! "+ username)
         total += 1
-        input("\u001b[37m Press Enter to continue...")
+        input("\u001b[37m \nPress Enter to continue...")
         play_game()
     elif (user == 'P' and computer == 'P'):
         print(" You choose Paper, Computer picked Paper")
         print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37m Press Enter to continue...")
+        input("\u001b[37m \nPress Enter to continue...")
         play_game()
     elif (user == 'S' and computer == 'S'):
         print(" You choose Scissors, Computer picked Scissors")
         print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37m Press Enter to continue...")
+        input("\u001b[37m \nPress Enter to continue...")
         play_game()
     
     elif user == "R":
         if computer == "P":
             print(" You choose Rock, Computer picked Paper")
             print("\u001b[31m You Lose! " + username)
-            input("\u001b[37m Press Enter to continue...")
+            input("\u001b[37m \nPress Enter to continue...")
             total += 1
             play_game()
         else:            
@@ -170,13 +168,13 @@ def play_game():
             print("\u001b[32mYou Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37m Press Enter to continue...")
+            input("\u001b[37m \nPress Enter to continue...")
             play_game()
     elif user == "P":
         if computer == "S":
             print(" You choose Paper, Computer picked Scissors")
             print("\u001b[31m You Lose! " + username)
-            input("\u001b[37m Press Enter to continue...")
+            input("\u001b[37m \nPress Enter to continue...")
             total += 1
             play_game()
         else:
@@ -184,13 +182,13 @@ def play_game():
             print("\u001b[32m You Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37m Press Enter to continue...")
+            input("\u001b[37m \nPress Enter to continue...")
             play_game()
     elif user == "S":
         if computer == "R":
             print(" You choose Scissors, Computer picked Rock")
             print("\u001b[31m You Lose " + username)
-            input("\u001b[37m Press Enter to continue...")
+            input("\u001b[37m \nPress Enter to continue...")
             total += 1
             play_game()
         else:            
@@ -198,7 +196,7 @@ def play_game():
             print("\u001b[32mYou Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37m Press Enter to continue...")
+            input("\u001b[37m \nPress Enter to continue...")
             play_game()
 
     elif user == "Q":
@@ -219,7 +217,7 @@ def play_game():
     else:
         print(" That input isn't valid.")
         print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
-        input("\u001b[37m Press Enter to continue...")
+        input("\u001b[37m \nPress Enter to continue...")
         play_game()
         
 
@@ -233,10 +231,16 @@ def print_score():
     # df = userinfo.get_as_df() # create the dataframe 
     # print(df)
 
-    userinfo = SHEET.worksheet("userinfo")
+    userinfo = sheet.get_all_values("userinfo")
+    last_10_scores = user[-10]
 
+    print(last 10 scores)
+
+    userinfo = SHEET.worksheet("userinfo")
     column = userinfo.col_values(1)
+    # total_game = sum (col (19))
     print(column)
+    # print(total_game)
 
     # for cell in userinfo.range('A2:A8'):
     #     print(cell.value)
@@ -246,12 +250,26 @@ def print_score():
     #     print(cell.value)
         
     
-    columns = []
-    for ind in range (1, 2):
-        column = userinfo.col_values(ind)
-        columns.append(column[-5:])
-        print(columns)
-        # print(ind)
+    # this code works
+    # columns = []
+    # for ind in range (1, 2):
+    #     column = userinfo.col_values(ind)
+    #     columns.append(column[-5:])
+    #     print(columns)
+    # for ind in range (8, 9):
+    #     column = userinfo.col_values(ind)
+    #     columns.append(column[-5:])
+    #     print("\n")
+    #     print(columns)
+    # for ind in range (20, 21):
+    #     column = userinfo.col_values(ind)
+    #     columns.append(column[-5:])
+    #     print("\n")
+    #     print(columns)
+    
+
+
+    # print(ind)
     # print(name, won, complete)
     # print("%s you won %s games out of %s" % (name, won, complete))
     
@@ -369,7 +387,7 @@ def print_slow(ltr):
 
 
 
-# print_score()
+print_score()
 reset()
 intro()
 # play_game()
