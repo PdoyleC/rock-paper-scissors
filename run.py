@@ -61,7 +61,7 @@ def enter_username():
     reset()
     global username
     print('')
-    username = input(" Please enter username: \n>> ").upper()
+    username = input(" Please enter username: \n >> ").upper()
     time.sleep(2)
     menu()
 
@@ -78,7 +78,7 @@ def menu():
     print("\n 4)....Press 4 and then Enter to Enter a new Username.")
     print("\n 5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
-    answer = input("\n\n Please enter your choice.\n>> ").upper()
+    answer = input("\n\n Please enter your choice.\n >> ").upper()
     # print(userscore.cell(3,1).value) this works
     print('')
     while True:
@@ -142,45 +142,45 @@ def play_game():
     global win
     print(" Enter Q to save your results and Exit the game entirety.")
     print(" Enter M to save your results and go back to the Menu.")
-    user = input("\u001b[37m\n Please choose _ R for Rock, P for Paper, and S for Scissors.\n\n>> ").upper()
+    user = input("\u001b[37m\n Please choose _ R for Rock, P for Paper, and S for Scissors.\n\n >> ").upper()
     if (user == 'R' and computer == 'R'):
-        print("You choose Rock, Computer picked Rock")
-        print("It's a Draw! "+ username)
+        print(" You choose Rock, Computer picked Rock")
+        print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37m \nPress Enter to continue...")
+        input("\u001b[37m \n Press Enter to continue...")
         play_game()
     elif (user == 'P' and computer == 'P'):
         print(" You choose Paper, Computer picked Paper")
         print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37m \nPress Enter to continue...")
+        input("\u001b[37m \n Press Enter to continue...")
         play_game()
     elif (user == 'S' and computer == 'S'):
         print(" You choose Scissors, Computer picked Scissors")
         print(" It's a Draw! "+ username)
         total += 1
-        input("\u001b[37m \nPress Enter to continue...")
+        input("\u001b[37m \n Press Enter to continue...")
         play_game()
     
     elif user == "R":
         if computer == "P":
             print(" You choose Rock, Computer picked Paper")
             print("\u001b[31m You Lose! " + username)
-            input("\u001b[37m \nPress Enter to continue...")
+            input("\u001b[37m \n Press Enter to continue...")
             total += 1
             play_game()
         else:            
             print(" You choose Rock, Computer picked Scissors")
-            print("\u001b[32mYou Win! " + username)
+            print("\u001b[32m You Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37m \nPress Enter to continue...")
+            input("\u001b[37m \n Press Enter to continue...")
             play_game()
     elif user == "P":
         if computer == "S":
             print(" You choose Paper, Computer picked Scissors")
             print("\u001b[31m You Lose! " + username)
-            input("\u001b[37m \nPress Enter to continue...")
+            input("\u001b[37m \n Press Enter to continue...")
             total += 1
             play_game()
         else:
@@ -188,21 +188,21 @@ def play_game():
             print("\u001b[32m You Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37m \nPress Enter to continue...")
+            input("\u001b[37m \n Press Enter to continue...")
             play_game()
     elif user == "S":
         if computer == "R":
             print(" You choose Scissors, Computer picked Rock")
             print("\u001b[31m You Lose " + username)
-            input("\u001b[37m \nPress Enter to continue...")
+            input("\u001b[37m \n Press Enter to continue...")
             total += 1
             play_game()
         else:            
             print(" You choose Scissors, Computer picked Paper")
-            print("\u001b[32mYou Win! " + username)
+            print("\u001b[32m You Win! " + username)
             win += 1
             total += 1
-            input("\u001b[37m \nPress Enter to continue...")
+            input("\u001b[37m \n Press Enter to continue...")
             play_game()
 
     elif user == "Q":
@@ -249,12 +249,12 @@ def print_score(username):
         # for row in last_10_scores:
         #     print("username: {row[0]}, wins: {row[7]}, Total games: {row[19]}")
 
-        print(f"Over a max of your last 10 Visits you have:")
-        print(f"Won: {total_wins} Games out of: {total_games} Games in total\n")
+        print(f" {username.capitalize()} Over a max of your last 10 Visits you have:")
+        print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
         # print(f"Total Games played over your last 10 visits: {total_games}")
         print("\n Press 1 and then Enter to search for a user name.")
-        print("\n Press 2 and then Enter return to the Menu Options.")
-        scoresearch = input("\n Please enter your choice.\n>> ").upper()
+        print(" Press 2 and then Enter to return to the Menu Options.")
+        scoresearch = input("\n Please enter your choice.\n >> ").upper()
         while True:
             if scoresearch == "1":
                 username_to_search = input(" Enter a username: ")
@@ -264,12 +264,13 @@ def print_score(username):
 
             else:
                 print(" That input isn't valid.")
-                input("\u001b[37m \n Press Enter to continue to Menu Options...")
-                menu()
+                input("\u001b[37m \n Press Enter to continue...")
+                username_to_search = username
+                print_score(username_to_search)
 
     else:
-        print(" User not found.")
-        input("\u001b[37m \n Press Enter to continue to Menu Options...")
+        print(" No User Name was found.")
+        input("\u001b[37m \n Press Enter to continue to return to Menu...")
         menu()
 
     
