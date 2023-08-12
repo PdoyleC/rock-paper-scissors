@@ -265,6 +265,7 @@ def print_score(username):
                 print(f" Up to your last 10 Scores: {username}")
                 for row in last_10_scores:
                     print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}")
+                    print(f" Total Wins: {total_wins} Total Games: {total_games}\n")
                 input("\u001b[37m \n Press Enter to continue to return to Menu...")
                 username_to_search = username
                 print_score(username_to_search)
