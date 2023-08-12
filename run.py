@@ -12,9 +12,7 @@ from google.oauth2.service_account import Credentials
 
 choice = ["R", "P", "S"]
 computer = choice[randint(0,2)]
-level = 0
 win = 0
-lose = 0
 total = 0
 
 
@@ -254,6 +252,7 @@ def print_score(username):
         # print(f"Total Games played over your last 10 visits: {total_games}")
         print("\n Press 1 and then Enter to search for a user name.")
         print(" Press 2 and then Enter to return to the Menu Options.")
+        print(" Press 3 and then Enter to see score for your last 10 games.")
         scoresearch = input("\n Please enter your choice.\n >> ").upper()
         while True:
             if scoresearch == "1":
@@ -261,7 +260,14 @@ def print_score(username):
                 print_score(username_to_search)
             elif scoresearch == "2":
                 menu()
-
+            elif scoresearch == "3":
+                clear()
+                print(f" Up to your last 10 Scores: {username}")
+                for row in last_10_scores:
+                    print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}")
+                input("\u001b[37m \n Press Enter to continue to return to Menu...")
+                username_to_search = username
+                print_score(username_to_search)
             else:
                 print(" That input isn't valid.")
                 input("\u001b[37m \n Press Enter to continue...")
