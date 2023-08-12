@@ -75,7 +75,6 @@ def menu():
     print("\n 1)....Press 1 and then Enter to play Rock Paper Sicssors.")
     print("\n 2)....Press 2 and then Enter to read the instruction's.")
     #print("\n3)....Press 3 and then Enter to see your score.")  comment out so code can be written
-    #print("\n4)....Press 4 and then Enter to see high score's.") comment out so code can be written
     print("\n 4)....Press 4 and then Enter to Enter new Username.")
     print("\n 5)....Press 5 and then Enter to Exit the Game.")
     #print("\nWould you like to read the Game Instructions " + username)
@@ -227,7 +226,7 @@ def play_game():
 
 
 
-def print_score():
+def print_score(username):
     # print(userinfo.range('A2:A28'))
     # time.sleep(5)
     
@@ -236,18 +235,25 @@ def print_score():
     # print(df)
 
     data = sheet.get_all_values()
-    user_data = [row for row in data if row[0]]
+    username = username.lower()
+
+    user_data = [row for row in data if row[0].strip().lower() == username]
     if user_data:
-        last_10_scores = (user[-10] if len(user_data) > 10 else user_data)
+        last_10_scores = user_data[-10:] if len(user_data) > 10 else user_data
         total_wins = sum(int(row[7]) for row in last_10_scores)
+        total_games = sum(int(row[19]) for row in last_10_scores)
 
-    print("Total wins: {total_wins}")
+        # for row in last_10_scores:
+        #     print("username: {row[0]}, wins: {row[7]}, Total games: {row[19]}")
 
-    print(total_wins)
+        print(f"Total wins: {total_wins}")
+        print(f"Total Games: {total_games}")
 
-    userinfo = SHEET.worksheet("userinfo")
-    column = userinfo.col_values(1)
-    print(column)
+    
+
+    # userinfo = SHEET.worksheet("userinfo")
+    # column = userinfo.col_values(1)
+    # print(column)
 
 
 
@@ -313,19 +319,10 @@ def print_score():
     # print(userrow)
     # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
     # print(userrow2)
-    #print(userinfo.get('A3:T16'))
-    #userinfo.get([username], table_range='A2:A200')
-    #print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    #print('Rows: ',userinfo.row_count)
-
-
-    # username = 'Philip'  don't work
-    # cell = userinfo.find(username) don't work
-    # cell don't work
-    # key_row = cell.row don't work
-    # key_col = cell.col don't work
-    # print(key_col,key_row) don't work
-    # print(userinfo.row_value(username)) don't work
+    # print(userinfo.get('A3:T16'))
+    # userinfo.get([username], table_range='A2:A200')
+    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
+    # print('Rows: ',userinfo.row_count)
 
     exit()
 
@@ -384,7 +381,7 @@ def reset():
     
 def clear():
     """
-        Clears the screen
+    Clears the screen
     """
     print("\033c")
     
@@ -398,8 +395,7 @@ def print_slow(ltr):
         time.sleep(0.1)
 
 
-
-# print_score()
+username_to_search = input("Enter a username: ")
+print_score(username_to_search)
 reset()
 intro()
-# play_game()
