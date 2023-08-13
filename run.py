@@ -11,7 +11,7 @@ from google.oauth2.service_account import Credentials
 
 
 choice = ["R", "P", "S"]
-computer = choice[randint(0,2)]
+computer = choice[randint(0, 2)]
 win = 0
 total = 0
 
@@ -29,13 +29,11 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 credentials = ServiceAccountCredentials.from_json_keyfile_name('creds.json', SCOPE)
 client = gspread.authorize(credentials)
-sheet = client.open('rock_paper_scissors').sheet1 
+sheet = client.open('rock_paper_scissors').sheet1
 SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
 
 userinfo = SHEET.worksheet('userinfo')
 userinfo = SHEET.worksheet('userinfo')
-
-
 
 
 def intro():
@@ -54,8 +52,9 @@ def intro():
     clear()
     enter_username()
 
-def enter_username():  
-    clear() 
+
+def enter_username():
+    clear()
     reset()
     global username
     print('')
@@ -63,8 +62,9 @@ def enter_username():
     time.sleep(2)
     menu()
 
+
 def menu():
-    """ 
+    """
     User can picks there option on where to go.
     """
     clear()
@@ -85,7 +85,7 @@ def menu():
         if answer == "3":
             username_to_search = username
             print_score(username_to_search)
-        elif answer =="4":
+        elif answer == "4":
             enter_username()
         if answer == "5":
             clear()
@@ -98,7 +98,7 @@ def menu():
 
 
 def instructions():
-    """ 
+    """
     Game instructions will be printed if the user
     has never played the game.
     """
@@ -118,7 +118,7 @@ def instructions():
             play_game()
         elif answer == "M":
             menu()
-        if answer =="E":
+        if answer == "E":
             clear()
             print("Thank you for playing the game.\n\n")
             exit()
@@ -131,37 +131,37 @@ def instructions():
 
 
 def play_game():
-    """ 
-    Game is played here, enter R,P,S and computer picks random, 
+    """
+    Game is played here, enter R,P,S and computer picks random,
     if else to decide the winner. Results are displayed when enter is pressed.
     """
     choice = ["R", "P", "S"]
-    computer = choice[randint(0,2)]
+    computer = choice[randint(0, 2)]
     clear()
     global total
     global win
     print(" Enter Q to save your results and Exit the game entirety.")
     print(" Enter M to save your results and go back to the Menu.")
-    user = input("\u001b[37m\n Please choose _ R for Rock, P for Paper, and S for Scissors.\n\n >> ").upper()
+    user = input("\u001b[37m\n Please Enter R for Rock, P for Paper, and S for Scissors.\n\n >> ").upper()
     if (user == 'R' and computer == 'R'):
         print(" You choose Rock, Computer picked Rock")
-        print(" It's a Draw! "+ username)
+        print(" It's a Draw! " + username)
         total += 1
         input("\u001b[37m \n Press Enter to continue...")
         play_game()
     elif (user == 'P' and computer == 'P'):
         print(" You choose Paper, Computer picked Paper")
-        print(" It's a Draw! "+ username)
+        print(" It's a Draw! " + username)
         total += 1
         input("\u001b[37m \n Press Enter to continue...")
         play_game()
     elif (user == 'S' and computer == 'S'):
         print(" You choose Scissors, Computer picked Scissors")
-        print(" It's a Draw! "+ username)
+        print(" It's a Draw! " + username)
         total += 1
         input("\u001b[37m \n Press Enter to continue...")
         play_game()
-    
+
     elif user == "R":
         if computer == "P":
             print(" You choose Rock, Computer picked Paper")
@@ -169,7 +169,7 @@ def play_game():
             input("\u001b[37m \n Press Enter to continue...")
             total += 1
             play_game()
-        else:            
+        else:
             print(" You choose Rock, Computer picked Scissors")
             print("\u001b[32m You Win! " + username)
             win += 1
@@ -197,7 +197,7 @@ def play_game():
             input("\u001b[37m \n Press Enter to continue...")
             total += 1
             play_game()
-        else:            
+        else:
             print(" You choose Scissors, Computer picked Paper")
             print("\u001b[32m You Win! " + username)
             win += 1
@@ -206,36 +206,28 @@ def play_game():
             play_game()
 
     elif user == "Q":
-            clear()
-            userinfo.append_row([username], table_range='A2')
-            userinfo.append_row([win], table_range='H2')
-            userinfo.append_row([total], table_range='T2')
-            print(" Thank you for playing the game.")
-            exit()
+        clear()
+        userinfo.append_row([username], table_range='A2')
+        userinfo.append_row([win], table_range='H2')
+        userinfo.append_row([total], table_range='T2')
+        print(" Thank you for playing the game.")
+        exit()
     elif user == "C":
-            clear() 
+        clear()
     elif user == "M":
-            userinfo.append_row([username], table_range='A2')
-            userinfo.append_row([win], table_range='H2')
-            userinfo.append_row([total], table_range='T2')
-            reset()
-            menu()
+        userinfo.append_row([username], table_range='A2')
+        userinfo.append_row([win], table_range='H2')
+        userinfo.append_row([total], table_range='T2')
+        reset()
+        menu()
     else:
         print(" That input isn't valid.")
         print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
         input("\u001b[37m \nPress Enter to continue...")
         play_game()
-        
-
 
 
 def print_score(username):
-    # print(userinfo.range('A2:A28'))
-    # time.sleep(5)
-    
-    # userinfo.resize(10,10) # resize rows and columns of sheet
-    # df = userinfo.get_as_df() # create the dataframe 
-    # print(df)
     clear()
     data = sheet.get_all_values()
     username = username.lower()
@@ -245,14 +237,8 @@ def print_score(username):
         last_10_scores = user_data[-10:] if len(user_data) > 10 else user_data
         total_wins = sum(int(row[7]) for row in last_10_scores)
         total_games = sum(int(row[19]) for row in last_10_scores)
-
-        # for row in last_10_scores:
-        #     print("username: {row[0]}, wins: {row[7]}, Total games: {row[19]}")
-
         print(f" {username.capitalize()} Over a max of your last 10 Visits you have:")
         print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
-        # print(f"Total Games played over your last 10 visits: {total_games}")
-        # score menu
         print(f"\n Press 1 and then Enter to see {username}s last 10 games result.")
         print(" Press 2 and then Enter to search for a user name.")
         print(" Press 3 and then Enter to return to the Menu Options.")
@@ -283,142 +269,21 @@ def print_score(username):
         input("\u001b[37m \n Press Enter to continue to return to Menu...")
         menu()
 
-    
-
-    # userinfo = SHEET.worksheet("userinfo")
-    # column = userinfo.col_values(1)
-    # print(column)
-
-
-
-
-
-
-    # for cell in userinfo.range('A2:A8'):
-    #     print(cell.value)
-    # for cell in userinfo.range('H2:H8'):
-    #     print(cell.value)
-    # for cell in userinfo.range('T2:T8'):
-    #     print(cell.value)
-        
-    
-    # # this code works
-    # columns = []
-    # for ind in range (1, 2):
-    #     column = userinfo.col_values(ind)
-    #     columns.append(column[-5:])
-    #     print(columns)
-    # for ind in range (8, 9):
-    #     column = userinfo.col_values(ind)
-    #     columns.append(column[-5:])
-    #     print("\n")
-    #     print(columns)
-    # for ind in range (20, 21):
-    #     column = userinfo.col_values(ind)
-    #     columns.append(column[-5:])
-    #     print("\n")
-    #     print(columns)
-    
-
-
-    # print(ind)
-    # print(name, won, complete)
-    # print("%s you won %s games out of %s" % (name, won, complete))
-    
-    
-    
-    # sales = sheet.worksheet("sales")
-    # userinfo = sales.col_values(0)
-    # print(userinfo)
-
-    # results = userinfo.values().get(spreadsheetId=SPREADSHEET_ID, range="userinfo!A1:A20").execute()
-    # # values = result.get("values", [])
-    # values = result.get('values', [])
-    # for row in values:
-    #         # Print columns A and H and T, which correspond to indices 0 and 7.
-    #         print('%s, %s, %s' % (row[0], row[7], row[19]))
-
-    # for row in values:
-    #     print(row)
-    # for cell in userinfo.range('A2:A28','H2:H28','T2:T28'):
-    #     print(cell.value)
-    # time.sleep(5)
-    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    # print(userinfo.acell('A12').value)
-    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    # username = input("Please enter username: \n>> ").upper()
-    # userinfo.append_row([username], table_range='A2')
-    # userrow = userinfo.row_values(5)
-    # userrow2 = userinfo.get_all_records()
-    # print(userrow)
-    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    # print(userrow2)
-    # print(userinfo.get('A3:T16'))
-    # userinfo.get([username], table_range='A2:A200')
-    # print("--------*-*-*-*-*-*-*-*-*-*-*-*----------")
-    # print('Rows: ',userinfo.row_count)
-
-    exit()
-
-
-
-# def get_high_score():
-#     """
-#     Gets the high score from user who have played the game
-#     """
-
-# def quit():
-#     global win
-#     global lose
-#     global draw
-#     userscore.append_row([win], table_range='B2')
-#     userscore.append_row([lose], table_range='C2')
-#     userscore.append_row([level], table_range='D2')
-#     exit()
-
-
-# def user_win():
-#     global win
-#     win += 1    
-#     #userscore.update_cell(1,1, win)  # for total games played
-#     #userscore.append_row([win], table_range='B2')
-#     play_game()
-
-# def user_lose():
-#     global lose    
-#     lose += 1    
-#     #userscore.update_cell(1,2, lose)
-#     #userscore.append_row([lose], table_range='C2')
-#     play_game()
-
-# def user_draw():
-#     global level    
-#     level += 1    
-#     #userscore.update_cell(1,3, level)
-#     #userscore.append_row([level], table_range='D2')
-#     play_game()
-
-# def user_total():
-#     global total    
-#     total += 1    
-#     #userscore.update_cell(1,4, total)
-#     play_game()
-
-
 
 def reset():
     global total
     total = 0
     global win
     win = 0
-    
-    
+
+
 def clear():
     """
     Clears the screen
     """
     print("\033c")
-    
+
+
 def print_slow(ltr):
     """
     Creates a slow typing effect
@@ -429,7 +294,5 @@ def print_slow(ltr):
         time.sleep(0.1)
 
 
-# username_to_search = input("Enter a username: ")
-# print_score(username_to_search)
 reset()
 intro()

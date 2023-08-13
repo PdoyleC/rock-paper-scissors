@@ -73,6 +73,8 @@
 ![score Play](documentation/scorearea.png)   
 ![score Play](documentation/scorearea1.png)
 
+[Back to contents](#contents)
+
 ## Features to implement in future
 - Count the number of times the user entered P, R or S, to see if the user has a preference.
 - Create a leader board for the top 10 highest scores.
@@ -108,6 +110,8 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 ![Sheets Bug](documentation/bug.png)
 ![Sheets Bug](documentation/bug1.png)
+
+[Back to contents](#contents)
 
 ## Deployment
 - Heroku was used to deploy the website.
@@ -148,6 +152,8 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - [Heroku](https://www.heroku.com/about)
 - [LucidCharts](https://www.lucidchart.com/pages/)
 
+[Back to contents](#contents)
+
 
 
 ## Credits
@@ -164,6 +170,9 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     - [Sum Count Results](https://stackoverflow.com/questions/75196357/sum-last-n-rows-of-df-count-results-into-one-row).
     - [Google Sheets Guide](https://understandingdata.com/posts/the-comprehensive-guide-to-google-sheets-with-python/).
     - [Read/Write Google Sheets Guide](https://aryanirani123.medium.com/read-and-write-data-in-google-sheets-using-python-and-the-google-sheets-api-6e206a242f20).
+    - [Appending Rows Google Sheets Guide](https://stackoverflow.com/questions/63775455/python-gspread-api-not-appending-rows-if-multiple-functions-called).
+
+
 
 
 ## Acknowledgments
