@@ -33,10 +33,9 @@
 <details>
 <summary>Features Image</summary>
 
-![Welcome Message](documentation/features.jpg)
-![Enter User Name](documentation/features1.jpg)
-![Menu](documentation/features4.jpg)
-![Game Play](documentation/features2.jpg)
+![Welcome Message](documentation/welcome.png)
+![Menu](documentation/menuoption.png)
+![Game Play](documentation/gameplay.png)
 
 </details>
 
@@ -139,3 +138,14 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Google Developers site was a great tool for research to access and edit Google sheet: [Google Developers](https://developers.google.com/sheets/api/guides/create).
 - To create font colour and background colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 - To transfer variables from one function to another: [stackoverflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
+- In the printing of the scores, inspiration and research was found at the following sites,
+    - [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp),
+    - [Last Lecords](https://www.geeksforgeeks.org/get-last-n-records-of-a-pandas-dataframe/),
+    - [Print in Python](https://stackoverflow.com/questions/69472788/how-to-get-columns-titles-from-googlesheets-to-print-in-python),
+    - [Search Row for Data](https://stackoverflow.com/questions/63033616/python-google-sheets-check-in-which-row-the-data-is).
+    - [Search Column for Data](https://stackoverflow.com/questions/61599272/google-sheets-search-column-for-value-using-python).
+    - [Iterate Rows for Data](https://stackoverflow.com/questions/74547789/iterate-over-pandas-rows-and-using-shift-in-if-statement).
+    - [Sum Count Results](https://stackoverflow.com/questions/75196357/sum-last-n-rows-of-df-count-results-into-one-row).
+    - [Google Sheets Guide](https://understandingdata.com/posts/the-comprehensive-guide-to-google-sheets-with-python/).
+    - [Read/Write Google Sheets Guide](https://aryanirani123.medium.com/read-and-write-data-in-google-sheets-using-python-and-the-google-sheets-api-6e206a242f20).
+
