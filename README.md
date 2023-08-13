@@ -5,6 +5,22 @@
 
 [Link to live project](https://rock-paper-scissorspp3-18513f12fbb5.herokuapp.com/)
 
+## Table of Content
+
+1. [Introduction](#introduction)
+2. [Existing Features](#existing-features)
+3. [Features to implement in future](#features-to-implement-in-future)
+4. [Colour](#colour)
+5. [Google Sheet Access](#google-sheet-access)
+6. [Flow-Chart](#flow-chart)
+7. [Testing](#testing)
+8. [Bug ](#bug)
+9. [Deployment ](#deployment)
+10. [Technologies Used ](#Technologies-used)
+11. [Credits ](#credits)
+12. [Acknowledgments ](#acknowledgments)
+
+
 
 ## Introduction
 - Rock, Paper, Scissors is a game that can solve any conflict and is quite possibly the best sport in the entire world!
@@ -138,7 +154,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Google Developers site was a great tool for research to access and edit Google sheet: [Google Developers](https://developers.google.com/sheets/api/guides/create).
 - To create font colour and background colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 - To transfer variables from one function to another: [stackoverflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
-- In the printing of the scores, inspiration and research was found at the following sites,
+- In the display and calculating of the scores, inspiration and research was found at the following sites,
     - [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp),
     - [Last Lecords](https://www.geeksforgeeks.org/get-last-n-records-of-a-pandas-dataframe/),
     - [Print in Python](https://stackoverflow.com/questions/69472788/how-to-get-columns-titles-from-googlesheets-to-print-in-python),
@@ -149,3 +165,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     - [Google Sheets Guide](https://understandingdata.com/posts/the-comprehensive-guide-to-google-sheets-with-python/).
     - [Read/Write Google Sheets Guide](https://aryanirani123.medium.com/read-and-write-data-in-google-sheets-using-python-and-the-google-sheets-api-6e206a242f20).
 
+
+## Acknowledgments
+
+- Thank you to my mentor Elaine Roche who helped with points and tips and gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers for my project.
