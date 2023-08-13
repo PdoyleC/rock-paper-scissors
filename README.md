@@ -51,6 +51,12 @@
 ### New User Name
 - A new player can enter there username without exiting the game and starting the game again.
 
+### Score Area
+- This area shows the current user there score.
+- The user can see there results for the last 10 games that they have played.
+- The user can search for other users by there user name.
+![score Play](documentation/scorearea.png)   
+![score Play](documentation/scorearea1.png)
 
 ## Features to implement in future
 - Count the number of times the user entered P, R or S, to see if the user has a preference.
