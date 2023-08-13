@@ -75,9 +75,7 @@ def menu():
     print("\n 3)....Press 3 and then Enter to see your score.")
     print("\n 4)....Press 4 and then Enter to Enter a new Username.")
     print("\n 5)....Press 5 and then Enter to Exit the Game.")
-    #print("\nWould you like to read the Game Instructions " + username)
     answer = input("\n\n Please enter your choice.\n >> ").upper()
-    # print(userscore.cell(3,1).value) this works
     print('')
     while True:
         if answer == "1":
@@ -255,15 +253,12 @@ def print_score(username):
         print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
         # print(f"Total Games played over your last 10 visits: {total_games}")
         # score menu
-        print("\n Press 1 and then Enter to search for a user name.")
-        print(" Press 2 and then Enter to see score for your last 10 games.")
+        print(f"\n Press 1 and then Enter to see {username}s last 10 games result.")
+        print(" Press 2 and then Enter to search for a user name.")
         print(" Press 3 and then Enter to return to the Menu Options.")
         scoresearch = input("\n Please enter your choice.\n >> ").upper()
         while True:
             if scoresearch == "1":
-                username_to_search = input(" Enter a username: ")
-                print_score(username_to_search)
-            elif scoresearch == "2":
                 clear()
                 print(f" Up to your last 10 Scores: {username}")
                 for row in last_10_scores:
@@ -272,12 +267,10 @@ def print_score(username):
                 input("\u001b[37m \n Press Enter to continue to return to score Menu...")
                 username_to_search = username
                 print_score(username_to_search)
-            elif scoresearch == "3":
-                menu()
-            elif scoresearch == "42":
-                username_to_search = ARTHUR
+            elif scoresearch == "2":
+                username_to_search = input(" Enter a username: ")
                 print_score(username_to_search)
-                input("\u001b[37m \n Press Enter to continue to return to score Menu...")
+            elif scoresearch == "3":
                 menu()
             else:
                 print(" That input isn't valid.")
