@@ -53,16 +53,28 @@ def intro():
     enter_username()
 
 
+# input_str = raw_input("Please provide some info: ")
+# if len(input_str) > 15:
+#     print "Error! Only 15 characters allowed!"
+
+
+
 def enter_username():
     reset()
     global username
     print('')
+    print(" Your username can't be just spaces and must be 12 or less characters.")
     username = input(" Please enter username: \n >> ").upper()
-    if username.strip() != "":
+    if len(username) > 12:        
+        clear()
+        print(" Please enter a valid input!")
+        print(" Only a max of 12 characters allowed!")
+        enter_username()
+    elif username.strip() != "":
         menu()
     else:
         clear()
-        print(" Spaces or Enter only aren't a valud username.")
+        print(" Spaces or Enter only aren't a valid username.")
         enter_username()
     menu()
 

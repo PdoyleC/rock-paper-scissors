@@ -51,7 +51,6 @@
 
 ![Welcome Message](documentation/welcome.png)
 ![Menu](documentation/menuoption.png)
-![Game Play](documentation/gameplay.png)
 
 </details>
 
@@ -63,6 +62,8 @@
 - The user has a choice to continue to play for ever, or they can exit the game or go back to the menu.
 - It is at this point the number of wins and total games played are saved to google sheets for later display.
 
+![Game Play](documentation/gameplay.png)
+
 ### New User Name
 - A new player can enter there username without exiting the game and starting the game again.
 
@@ -70,8 +71,12 @@
 - This area shows the current user there score.
 - The user can see there results for the last 10 games that they have played.
 - The user can search for other users by there user name.
+<details>
+<summary>Features Image</summary>
+
 ![score Play](documentation/scorearea.png)   
 ![score Play](documentation/scorearea1.png)
+</details>
 
 [Back to contents](#contents)
 
@@ -104,6 +109,8 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
 
 - A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username. If spaces are only entered an error message appears.
+- An error message will appear on the user input just after the intro title if only spaces are entered. 
+- An error message will also appear on the user input if a new user is entered from the main menu if only spaces are entered.
 
     ![Space entered Username](documentation/testnouser.png)
 
