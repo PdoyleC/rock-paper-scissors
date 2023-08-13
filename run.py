@@ -133,6 +133,10 @@ def instructions():
 
 
 def play_game():
+    """ 
+    Game is played here, enter R,P,S and computer picks random, 
+    if else to decide the winner. Results are displayed when enter is pressed.
+    """
     choice = ["R", "P", "S"]
     computer = choice[randint(0,2)]
     clear()
@@ -250,6 +254,7 @@ def print_score(username):
         print(f" {username.capitalize()} Over a max of your last 10 Visits you have:")
         print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
         # print(f"Total Games played over your last 10 visits: {total_games}")
+        # score menu
         print("\n Press 1 and then Enter to search for a user name.")
         print(" Press 2 and then Enter to see score for your last 10 games.")
         print(" Press 3 and then Enter to return to the Menu Options.")
@@ -268,6 +273,11 @@ def print_score(username):
                 username_to_search = username
                 print_score(username_to_search)
             elif scoresearch == "3":
+                menu()
+            elif scoresearch == "42":
+                username_to_search = ARTHUR
+                print_score(username_to_search)
+                input("\u001b[37m \n Press Enter to continue to return to score Menu...")
                 menu()
             else:
                 print(" That input isn't valid.")
