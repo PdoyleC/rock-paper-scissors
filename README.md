@@ -1,6 +1,6 @@
 
 
-![Rock, Paper, Scissors image](documentation/rps.jpg)
+![Rock, Paper, Scissors image](documentation/rps1.jpg)
 
 
 [Link to live project](https://rock-paper-scissorspp3-18513f12fbb5.herokuapp.com/)
@@ -117,12 +117,13 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 
 ## Bug
-- There was a bug when saving the results to google sheets. I the image below it can be seen that the results for Tom's first go is in Row 2 and the results for wins and total games are also in row 2. When the game is played again the results for win and total games don't go into the next row they went into Column A. The same happened for the 3rd and 4ft and so on. 
+- There was a bug when saving the results to google sheets. In the image below it can be seen that the results for Tom's first go is in Row 2 and the results for wins and total games are also in row 2. When the game is played again the results for win and total games don't go into the next row they went into Column A. The same happened for the 3rd and 4ft and so on. 
+
+    ![Sheets Bug](documentation/bug.png)
+
 - I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue would happen. 
 - The work around for this was to append the results for wins in column H and for total games into column T.
-
-![Sheets Bug](documentation/bug.png)
-![Sheets Bug](documentation/bug1.png)
+    ![Sheets Bug](documentation/bug1.png)
 
 [Back to contents](#contents)
 

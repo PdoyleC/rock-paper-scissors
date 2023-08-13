@@ -54,7 +54,6 @@ def intro():
 
 
 def enter_username():
-    clear()
     reset()
     global username
     print('')
@@ -63,11 +62,8 @@ def enter_username():
         menu()
     else:
         clear()
-        print(" Spaces or Enter only isn't a valud username.")
-        username = input(" Please input a valid username. \n >> ").upper()
+        print(" Spaces or Enter only aren't a valud username.")
         enter_username()
-        menu()
-    time.sleep(2)
     menu()
 
 
@@ -78,11 +74,11 @@ def menu():
     clear()
     print("\n Welcome " + username)
     print("\n Please enter your selection.")
-    print("\n 1)....Press 1 and then Enter to play Rock Paper Sicssors.")
-    print("\n 2)....Press 2 and then Enter to read the instruction's.")
-    print("\n 3)....Press 3 and then Enter to see your score.")
-    print("\n 4)....Press 4 and then Enter to Enter a new Username.")
-    print("\n 5)....Press 5 and then Enter to Exit the Game.")
+    print(" 1)....Press 1 and then Enter to play Rock Paper Sicssors.")
+    print(" 2)....Press 2 and then Enter to read the instruction's.")
+    print(" 3)....Press 3 and then Enter to see your score.")
+    print(" 4)....Press 4 and then Enter to Enter a new Username.")
+    print(" 5)....Press 5 and then Enter to Exit the Game.")
     answer = input("\n\n Please enter your choice.\n >> ").upper()
     print('')
     while True:
