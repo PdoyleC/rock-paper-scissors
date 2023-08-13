@@ -53,12 +53,6 @@ def intro():
     enter_username()
 
 
-# input_str = raw_input("Please provide some info: ")
-# if len(input_str) > 15:
-#     print "Error! Only 15 characters allowed!"
-
-
-
 def enter_username():
     reset()
     global username

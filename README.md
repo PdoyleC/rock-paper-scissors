@@ -119,6 +119,10 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 - A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line was added to say "If this is your first time here please play the game to view a score.".
 
+- Code was addded to limit the lenght of usernames to 12 or less characters. This stops usernames having 50 characters.
+
+![13 characters error](documentation/charlenerrorgif.gif)
+
 - A test check was completed.
 
     ![Testcheck](documentation/testcheck.png)
