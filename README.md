@@ -103,6 +103,12 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Tested in both CodeAnyWhere terminal and Heroku terminal.
 - CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
 
+- A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username.
+![Didn't enter R,P,S](documentation/testnouser.png)
+
+- A username was enter and then setected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. 
+![Didn't enter R,P,S](documentation/nogameplay.png)
+
 ## Bug
 - There was a bug when saving the results to google sheets. I the image below it can be seen that the results for Tom's first go is in Row 2 and the results for wins and total games are also in row 2. When the game is played again the results for win and total games don't go into the next row they went into Column A. The same happened for the 3rd and 4ft and so on. 
 - I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue would happen. 
