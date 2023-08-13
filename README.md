@@ -1,6 +1,6 @@
 
 
-![Rock, Paper, Scissors image](documentation/rps1.jpg)
+![Rock, Paper, Scissors image](documentation/rps.jpg)
 
 
 [Link to live project](https://rock-paper-scissorspp3-18513f12fbb5.herokuapp.com/)
@@ -103,7 +103,8 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Tested in both CodeAnyWhere terminal and Heroku terminal.
 - CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
 
-- A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username. If spaces are only entered it's a loop.
+- A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username. If spaces are only entered an error message appears.
+
     ![Space entered Username](documentation/testnouser.png)
 
 - A username was enter and then setected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. 

@@ -115,8 +115,10 @@ def instructions():
     print(" 6) The user can see there score in section 3 of the main menu.")
     print(' ')
     print(' ')
-    print("Would you like to Play the game, go back to the Menu or Exit?")
-    answer = input("Enter P to play\nEnter M to go to the Menu\nEnter E to exit game.\n").upper()
+    print(" Would you like to Play the game, go back to the Menu or Exit?")
+    print(" Enter P to play")
+    print(" Enter M to go to the Menu")
+    answer = input(" Enter E to exit game.\n >> ").upper()
     print('')
     while True:
         if answer == "P":
@@ -130,8 +132,8 @@ def instructions():
 
         else:
             print('')
-            print(" Please enter a valid input of either P to play, M for Menu or E to exit\n")
-            answer = input("").upper()
+            print(" Please enter a valid input of either,")
+            answer = input(" 'P' to play, 'M' for Menu or 'E' to exit\n >> ").upper()
     clear()
 
 
