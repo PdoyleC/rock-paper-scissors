@@ -1,6 +1,6 @@
 
 
-
+![Rock, Paper, Scissors image](documentation/rps.jpg)
 
 
 [Link to live project](https://rock-paper-scissorspp3-18513f12fbb5.herokuapp.com/)
@@ -84,7 +84,7 @@
 - Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a lose. 
 - A draw result was left as white.
 
-![Font Colour](documentation/colours.png)
+    ![Font Colour](documentation/colours.png)
 
 
 ## Google Sheet Access 
@@ -103,11 +103,18 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Tested in both CodeAnyWhere terminal and Heroku terminal.
 - CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
 
-- A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username.
-![Didn't enter R,P,S](documentation/testnouser.png)
+- A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username. If spaces are only entered it's a loop.
+    ![Space entered Username](documentation/testnouser.png)
 
 - A username was enter and then setected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. 
-![Didn't enter R,P,S](documentation/nogameplay.png)
+    ![Didn't enter R,P,S](documentation/nogameplay.png)
+
+- A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line was added to say "If this is your first time here please play the game to view a score.".
+
+- A test check was completed.
+
+    ![Testcheck](documentation/testcheck.png)
+
 
 ## Bug
 - There was a bug when saving the results to google sheets. I the image below it can be seen that the results for Tom's first go is in Row 2 and the results for wins and total games are also in row 2. When the game is played again the results for win and total games don't go into the next row they went into Column A. The same happened for the 3rd and 4ft and so on. 

@@ -63,8 +63,9 @@ def enter_username():
         menu()
     else:
         clear()
-        print(" Spaces only isn't a valud username.")
+        print(" Spaces or Enter only isn't a valud username.")
         username = input(" Please input a valid username. \n >> ").upper()
+        enter_username()
         menu()
     time.sleep(2)
     menu()
