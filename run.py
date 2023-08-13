@@ -59,6 +59,13 @@ def enter_username():
     global username
     print('')
     username = input(" Please enter username: \n >> ").upper()
+    if username.strip() != "":
+        menu()
+    else:
+        clear()
+        print(" Spaces only isn't a valud username.")
+        username = input(" Please input a valid username. \n >> ").upper()
+        menu()
     time.sleep(2)
     menu()
 
@@ -108,6 +115,7 @@ def instructions():
     print(" 3) Rock wins against scissors.")
     print(" 4) Scissors win against paper.")
     print(" 5) Paper wins against rock.")
+    print(" 6) The user can see there score in section 3 of the main menu.")
     print(' ')
     print(' ')
     print("Would you like to Play the game, go back to the Menu or Exit?")
@@ -265,7 +273,8 @@ def print_score(username):
                 print_score(username_to_search)
 
     else:
-        print(" No User Name was found.")
+        print(" The user doesn't exist")
+        print(" If this is your first time here please play the game to view a score.")
         input("\u001b[37m \n Press Enter to continue to return to Menu...")
         menu()
 
