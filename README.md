@@ -73,6 +73,7 @@
 ## Google Sheet Access 
 
 Googlesheet is used to store, usernames and game won along with total games played.
+![Google Sheet](documentation/googlesheet.png)
 
 
 ## Flow-Chart
