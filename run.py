@@ -62,7 +62,7 @@ def enter_username():
     global username
     print('')
     print(" Your username can't be just spaces and must be 12 or less characters.")
-    username = input(" Please enter username: \n >> ").upper()
+    username = input(" Please enter username: \n >> ")
     if len(username) > 12:
         clear()
         print(" Please enter a valid input!")
@@ -84,12 +84,12 @@ def menu():
     clear()
     print("\n Welcome " + username)
     print("\n Please enter your selection.")
-    print(" 1)....Press 1 and then Enter to play Rock Paper Sicssors.")
-    print(" 2)....Press 2 and then Enter to read the instruction's.")
-    print(" 3)....Press 3 and then Enter to see your score.")
-    print(" 4)....Press 4 and then Enter to Enter a new Username.")
-    print(" 5)....Press 5 and then Enter to Exit the Game.")
-    answer = input("\n\n Please enter your choice.\n >> ").upper()
+    print(" 1). Play Rock Paper Sicssors.")
+    print(" 2). Read the instruction's.")
+    print(" 3). Enter to see your score.")
+    print(" 4). Enter a new Username.")
+    print(" 5). Exit the Game.")
+    answer = input("\n\n Enter your number choice.\n >> ").upper()
     print('')
     while True:
         if answer == "1":
@@ -118,7 +118,7 @@ def instructions():
     """
     clear()
     print(" 1) Game is played against the computer.")
-    print(" 2) User enters either 'R'-(Rock) or 'P'-(Paper) or 'S'-(Scissors).")
+    print(" 2) User enters either 'R'-Rock or 'P'-Paper or 'S'-Scissors.")
     print(" 3) Rock wins against scissors.")
     print(" 4) Scissors win against paper.")
     print(" 5) Paper wins against rock.")
@@ -224,14 +224,15 @@ def play_game():
 
     elif user == "Q":
         if total == 0:  # This stops a zero results going to google sheets.
-            print(" Thank you for playing the game.")
+            clear()
+            print(" Thank you for playing the game.\n")
             exit()
         else:
             clear()
             userinfo.append_row([username], table_range='A2')
             userinfo.append_row([win], table_range='H2')
             userinfo.append_row([total], table_range='T2')
-            print(" Thank you for playing the game.")
+            print(" Thank you for playing the game.\n")
             exit()
     elif user == "M":
         if total == 0:
@@ -260,12 +261,12 @@ def print_score(username):
         last_10_scores = user_data[-10:] if len(user_data) > 10 else user_data
         total_wins = sum(int(row[7]) for row in last_10_scores)
         total_games = sum(int(row[19]) for row in last_10_scores)
-        print(f" {username.capitalize()} Over a max of your last 10 Visits you have:")
+        print(f" {username.capitalize()} :Over a max of your last 10 Visits you have:")
         print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
-        print(f"\n Press 1 and then Enter to see {username}s last 10 games result.")
-        print(" Press 2 and then Enter to search for a user name.")
-        print(" Press 3 and then Enter to return to the Menu Options.")
-        scoresearch = input("\n Please enter your choice.\n >> ").upper()
+        print(f"\n 1). To see {username.capitalize()}s last 10 games result.")
+        print(" 2). Enter to search for a user name.")
+        print(" 3). Return to the Menu Options.")
+        scoresearch = input("\n Enter your number choice.\n >> ").upper()
         while True:
             if scoresearch == "1":
                 clear()
