@@ -108,13 +108,13 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Tested in both CodeAnyWhere terminal and Heroku terminal.
 - CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
 
-- A space was enter in as a user name, and played the game, and in goolge sheets the below was entered. A score and total games, but no user name. Code was enter to stop spaces only being entered as a username. If spaces are only entered an error message appears.
-- An error message will appear on the user input just after the intro title if only spaces are entered. 
-- An error message will also appear on the user input if a new user is entered from the main menu if only spaces are entered.
+- A space was enter in as a user name, and played the game, and in goolge sheets (image below) there was no username in the 1st column. A score and total games was entered, but no user name. Code was added to stop spaces only being entered as a username. If spaces are only entered an error message appears.
 
     ![Space entered Username](documentation/testnouser.png)
 
-- A username was enter and then setected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. 
+- An error message will appear on the user input just after the intro title if only spaces are entered. 
+- An error message will also appear on the user input if a new user is entered from the main menu if only spaces are entered.
+- A username was enter and then setected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. Code was entered to stop this from happening.
     ![Didn't enter R,P,S](documentation/nogameplay.png)
 
 - A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line was added to say "If this is your first time here please play the game to view a score.".
@@ -136,6 +136,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue would happen. 
 - The work around for this was to append the results for wins in column H and for total games into column T.
     ![Sheets Bug](documentation/bug1.png)
+
 
 [Back to contents](#contents)
 

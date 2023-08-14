@@ -54,12 +54,16 @@ def intro():
 
 
 def enter_username():
+    """
+    This is for the username,
+    at the start of the game and when searching in the game area.
+    """
     reset()
     global username
     print('')
     print(" Your username can't be just spaces and must be 12 or less characters.")
     username = input(" Please enter username: \n >> ").upper()
-    if len(username) > 12:        
+    if len(username) > 12:
         clear()
         print(" Please enter a valid input!")
         print(" Only a max of 12 characters allowed!")
@@ -75,7 +79,7 @@ def enter_username():
 
 def menu():
     """
-    User can picks there option on where to go.
+    User can pick there option on where to go.
     """
     clear()
     print("\n Welcome " + username)
@@ -219,20 +223,26 @@ def play_game():
             play_game()
 
     elif user == "Q":
-        clear()
-        userinfo.append_row([username], table_range='A2')
-        userinfo.append_row([win], table_range='H2')
-        userinfo.append_row([total], table_range='T2')
-        print(" Thank you for playing the game.")
-        exit()
-    elif user == "C":
-        clear()
+        if total == 0:  # This stops a zero results going to google sheets.
+            print(" Thank you for playing the game.")
+            exit()
+        else:
+            clear()
+            userinfo.append_row([username], table_range='A2')
+            userinfo.append_row([win], table_range='H2')
+            userinfo.append_row([total], table_range='T2')
+            print(" Thank you for playing the game.")
+            exit()
     elif user == "M":
-        userinfo.append_row([username], table_range='A2')
-        userinfo.append_row([win], table_range='H2')
-        userinfo.append_row([total], table_range='T2')
-        reset()
-        menu()
+        if total == 0:
+            reset()
+            menu()
+        else:
+            userinfo.append_row([username], table_range='A2')
+            userinfo.append_row([win], table_range='H2')
+            userinfo.append_row([total], table_range='T2')
+            reset()
+            menu()
     else:
         print(" That input isn't valid.")
         print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
