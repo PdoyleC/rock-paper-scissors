@@ -16,7 +16,7 @@
 7. [Testing](#testing)
 8. [Bug ](#bug)
 9. [Deployment ](#deployment)
-10. [Technologies Used ](#Technologies-used)
+10. [Technologies Used ](#Technologies-Used)
 11. [Credits ](#credits)
 12. [Acknowledgments ](#acknowledgments)
 
@@ -25,7 +25,8 @@
 ## Introduction
 - Rock, Paper, Scissors is a game that can solve any conflict and is quite possibly the best sport in the entire world!
 - It is a 2 player game and can be played anywhere.
-- The rules are simple: rock beats scissors, scissors beats paper, and paper beats rock.
+- The rules are simple: Rock beats Scissors, Scissors beats Paper, and Paper beats Rock.
+- The users score is saved on Google sheets, which can later be recalled for display and total score for there last 10 games is also added together. 
 
 
 ## Existing Features
@@ -42,7 +43,7 @@
 - From the menu area -
     * The user can play the game.
     * Read the instructions.
-    * Read there score. 
+    * Read their score. 
     * Change user name.
     * Exit the game
 
@@ -78,7 +79,7 @@
 ![score Play](documentation/scorearea1.png)
 </details>
 
-[Back to contents](#contents)
+[Back to contents](#introduction)
 
 ## Features to implement in future
 - Count the number of times the user entered P, R or S, to see if the user has a preference.
@@ -119,7 +120,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 - A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line was added to say "If this is your first time here please play the game to view a score.".
 
-- Code was addded to limit the lenght of usernames to 12 or less characters. This stops usernames having 50 characters.
+- Code was addded to limit the lenght of usernames to 12 or less characters. This stops users having usernames that could be 50-100 characters in length.
 
 ![13 characters error](documentation/charlenerrorgif.gif)
 
@@ -138,7 +139,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     ![Sheets Bug](documentation/bug1.png)
 
 
-[Back to contents](#contents)
+[Back to contents](#introduction)
 
 ## Deployment
 - Heroku was used to deploy the website.
@@ -174,12 +175,12 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 ## Technologies Used
 - [Google Spreadsheets](https://docs.google.com/spreadsheets/create)
-- [Python](https://www.python.org/)
+- [CodeAnyWhere](https://app.codeanywhere.com/#state=474b05ff-3f92-4cdc-8752-6dd304bf7e9a&session_state=e2fb87e6-7eb8-4b49-8a19-ca79f4ba4e72&code=afcf483d-faf2-41da-977d-ef9081c5a331.e2fb87e6-7eb8-4b49-8a19-ca79f4ba4e72.7f856e59-e31e-4c70-a17f-bc37660636b2)
 - [GitHub](https://github.com/)
 - [Heroku](https://www.heroku.com/about)
 - [LucidCharts](https://www.lucidchart.com/pages/)
 
-[Back to contents](#contents)
+[Back to contents](#introduction)
 
 
 
@@ -199,8 +200,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     - [Read/Write Google Sheets Guide](https://aryanirani123.medium.com/read-and-write-data-in-google-sheets-using-python-and-the-google-sheets-api-6e206a242f20).
     - [Appending Rows Google Sheets Guide](https://stackoverflow.com/questions/63775455/python-gspread-api-not-appending-rows-if-multiple-functions-called).
     - [Invalid user name for spaces/nothong](https://stackoverflow.com/questions/51764409/how-to-prevent-user-from-inputting-spaces-nothing-in-python).
-
-
+    - [Getting the sum from an array](https://stackoverflow.com/questions/65100023/how-do-i-get-the-sum-of-a-row-in-an-array)
 
 
 ## Acknowledgments

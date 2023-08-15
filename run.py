@@ -60,9 +60,10 @@ def enter_username():
     """
     reset()
     global username
+    clear()
     print('')
     print(" Your username can't be just spaces and must be 12 or less characters.")
-    username = input(" Please enter username: \n >> ")
+    username = input(" Please enter username: \n >> ").upper()
     if len(username) > 12:
         clear()
         print(" Please enter a valid input!")
@@ -261,9 +262,9 @@ def print_score(username):
         last_10_scores = user_data[-10:] if len(user_data) > 10 else user_data
         total_wins = sum(int(row[7]) for row in last_10_scores)
         total_games = sum(int(row[19]) for row in last_10_scores)
-        print(f" {username.capitalize()} :Over a max of your last 10 Visits you have:")
+        print(f" {username.upper()} :Over a max of your last 10 Visits you have:")
         print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
-        print(f"\n 1). To see {username.capitalize()}s last 10 games result.")
+        print(f"\n 1). To see {username.upper()} last 10 individual games result.")
         print(" 2). Enter to search for a user name.")
         print(" 3). Return to the Menu Options.")
         scoresearch = input("\n Enter your number choice.\n >> ").upper()
@@ -273,7 +274,7 @@ def print_score(username):
                 print(f" Up to your last 10 Scores: {username}")
                 for row in last_10_scores:
                     print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}")
-                print(f" Total Wins: {total_wins} Total Games: {total_games}\n")
+                print(f" {row[0]} Total Wins: {total_wins} Total Games: {total_games}\n")
                 input("\u001b[37m \n Press Enter to continue to return to score Menu...")
                 username_to_search = username
                 print_score(username_to_search)
