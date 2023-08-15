@@ -5,6 +5,7 @@ import random
 from random import randint
 import sys
 import time
+import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from google.oauth2.service_account import Credentials
@@ -15,6 +16,14 @@ computer = choice[randint(0, 2)]
 win = 0
 total = 0
 
+
+# fgfgfgf
+# fgfgfgffgf
+# fgfgfgfwre
+# ewrert
+# tuyir
+# vghyy
+# FileExistsEr
 
 SCOPE = [
     "https://spreadsheets.google.com/feeds",
@@ -33,7 +42,7 @@ sheet = client.open('rock_paper_scissors').sheet1
 SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
 
 userinfo = SHEET.worksheet('userinfo')
-userinfo = SHEET.worksheet('userinfo')
+userdate = SHEET.worksheet('userdate')
 
 
 def intro():
@@ -230,9 +239,7 @@ def play_game():
             exit()
         else:
             clear()
-            userinfo.append_row([username], table_range='A2')
-            userinfo.append_row([win], table_range='H2')
-            userinfo.append_row([total], table_range='T2')
+            update_sheets()
             print(" Thank you for playing the game.\n")
             exit()
     elif user == "M":
@@ -240,9 +247,7 @@ def play_game():
             reset()
             menu()
         else:
-            userinfo.append_row([username], table_range='A2')
-            userinfo.append_row([win], table_range='H2')
-            userinfo.append_row([total], table_range='T2')
+            update_sheets()
             reset()
             menu()
     else:
@@ -273,7 +278,7 @@ def print_score(username):
                 clear()
                 print(f" Up to your last 10 Scores: {username}")
                 for row in last_10_scores:
-                    print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}")
+                    print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}. Date {row[28]},{row[36]},{row[45]}")
                 print(f" {row[0]} Total Wins: {total_wins} Total Games: {total_games}\n")
                 input("\u001b[37m \n Press Enter to continue to return to score Menu...")
                 username_to_search = username
@@ -296,6 +301,23 @@ def print_score(username):
         menu()
 
 
+def update_sheets():
+    """
+    Send score and date to google sheets
+    """    
+    userinfo.append_row([username], table_range='A2')
+    userinfo.append_row([win], table_range='H2')
+    userinfo.append_row([total], table_range='T2')
+    x = datetime.datetime.now()
+    date = (x.strftime("%d"),x.strftime("%b"),x.year)
+    year = (x.year)
+    userinfo.append_row([year], table_range='AT2')
+    month = (x.strftime("%b"))
+    userinfo.append_row([month], table_range='AK2')
+    day = (x.strftime("%d"))
+    userinfo.append_row([day], table_range='AC2')
+    
+    
 def reset():
     global total
     total = 0
