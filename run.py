@@ -117,7 +117,8 @@ def menu():
             exit()
         else:
             print('')
-            print(" Please enter a valid input of either 1, 2, 4 or 5\n")
+            clear()
+            print(" Please enter a valid input of either 1, 2, 3, 4 or 5\n")
             answer = input("").upper()
 
 
@@ -278,7 +279,7 @@ def print_score(username):
                 clear()
                 print(f" Up to your last 10 Scores: {username}")
                 for row in last_10_scores:
-                    print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}. Date {row[28]},{row[36]},{row[45]}")
+                    print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}. Date {row[28]}/{row[36]}/{row[45]}")
                 print(f" {row[0]} Total Wins: {total_wins} Total Games: {total_games}\n")
                 input("\u001b[37m \n Press Enter to continue to return to score Menu...")
                 username_to_search = username
@@ -303,21 +304,20 @@ def print_score(username):
 
 def update_sheets():
     """
-    Send score and date to google sheets
-    """    
+    Sends score and date to google sheets
+    """
     userinfo.append_row([username], table_range='A2')
     userinfo.append_row([win], table_range='H2')
     userinfo.append_row([total], table_range='T2')
     x = datetime.datetime.now()
-    date = (x.strftime("%d"),x.strftime("%b"),x.year)
     year = (x.year)
     userinfo.append_row([year], table_range='AT2')
     month = (x.strftime("%b"))
     userinfo.append_row([month], table_range='AK2')
     day = (x.strftime("%d"))
     userinfo.append_row([day], table_range='AC2')
-    
-    
+
+
 def reset():
     global total
     total = 0
