@@ -65,7 +65,7 @@ def enter_username():
     print('')
     print(" Your username can't be just spaces.")
     print(" Also your username must be 12 or less characters.")
-    username = input(" Please enter username: \n >> ").upper()
+    username = input("\n Please enter username: \n >> ").upper()
     if len(username) > 12:
         clear()
         incorrect -= 1
@@ -75,11 +75,11 @@ def enter_username():
             print(" The Program will end now.\n")
             exit()
         else:
-            print(" Please enter a valid input!")
             print(f" You only have {incorrect} more attempts \
-                at a valid Username,")
+at a valid Username,")
+            print(" Before the program ends.")
             print(" Only a max of 12 characters allowed!")
-            input(" \nPress Enter and then input a valid username.\n")
+            input("\n Press Enter and then input a valid username.\n")
             enter_username()
     elif username.strip() != "":
         menu()
@@ -94,7 +94,7 @@ def enter_username():
         print(" Spaces or Enter only aren't a valid username.")
         print(f" You only have {incorrect} more attempts at a valid Username,")
         print(" Before the program ends.")
-        input(" \nPress Enter and then input a valid username.\n")
+        input(" Press Enter and then input a valid username.\n")
         enter_username()
     menu()
 
