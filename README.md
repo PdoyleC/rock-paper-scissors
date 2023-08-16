@@ -133,7 +133,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
     ![Sheets Bug](documentation/bug.png)
 
-- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue as before would happen, where the resluts saved under Column A. So H was selected H for the win column.
+- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue as before would happen, where the resluts saved under Column A. So H was selected H for the win column, and T for Total games played. For the date, those results were put into Columns AC,AK and AT. By extending the columns in google sheets.
 - The work around for this was to append the results for wins in column H and for total games into column T.
     ![Sheets Bug](documentation/bug1.png)
 
@@ -181,6 +181,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 
 ## Credits
+- Rock, Paper, Scissors image was taken my by the owner of the READme.
 - Google Developers site was a great tool for research to access and edit Google sheet: [Google Developers](https://developers.google.com/sheets/api/guides/create).
 - To create font colour and background colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 - To transfer variables from one function to another: [stack overflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
