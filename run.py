@@ -28,7 +28,8 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
-credentials = ServiceAccountCredentials.from_json_keyfile_name('creds.json', SCOPE)
+credentials = ServiceAccountCredentials.from_json_keyfile_name\
+    ('creds.json', SCOPE)
 client = gspread.authorize(credentials)
 sheet = client.open('rock_paper_scissors').sheet1
 SPREADSHEET_ID = "1L2qcyBdDqffBuXtvUyqKk49c5hauk4lLj9g8aNBwbmA"
@@ -179,7 +180,7 @@ def play_game():
     global win  # Data for games won for google sheets
     print(" Enter Q to save your results and Exit the game entirety.")
     print(" Enter M to save your results and go back to the Menu.")
-    print(" Please Enter R for Rock, P for Paper, and S for Scissors.")
+    print("\n Please Enter R for Rock, P for Paper, and S for Scissors.")
     user = input("\n\n >> ").upper()
     if (user == 'R' and computer == 'R'):
         print(" You choose Rock, Computer picked Rock")
@@ -289,8 +290,13 @@ def print_score(username):
                 clear()
                 print(f" Up to your last 10 Scores: {username}")
                 for row in last_10_scores:
-                    print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}. Date {row[28]}/{row[36]}/{row[45]}")
-                print(f" {row[0]} Total Wins: {total_wins} Total Games: {total_games}\n")
+                    print(f" {row[0]}, \
+                        Wins: {row[7]}, \
+                        Out of {row[19]} Games. \
+                            Date {row[28]}/{row[36]}/{row[45]}")
+                print(f" {row[0]} \
+                    Total Wins: {total_wins} \
+                        Total Games: {total_games}\n")
                 input("\u001b[37m \n Press Enter to continue.")
                 username_to_search = username
                 print_score(username_to_search)
