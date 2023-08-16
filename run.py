@@ -17,14 +17,6 @@ win = 0
 total = 0
 
 
-# fgfgfgf
-# fgfgfgffgf
-# fgfgfgfwre
-# ewrert
-# tuyir
-# vghyy
-# FileExistsEr
-
 SCOPE = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/spreadsheets",
@@ -67,22 +59,31 @@ def enter_username():
     This is for the username,
     at the start of the game and when searching in the game area.
     """
-    reset()
     global username
+    global incorrect
     clear()
     print('')
     print(" Your username can't be just spaces and must be 12 or less characters.")
     username = input(" Please enter username: \n >> ").upper()
     if len(username) > 12:
         clear()
-        print(" Please enter a valid input!")
+        print(" \nPlease enter a valid input!")
         print(" Only a max of 12 characters allowed!")
         enter_username()
     elif username.strip() != "":
         menu()
+    elif incorrect == 1:
+        clear()
+        print(" \n I'm affraid you've entered an incorrect Username.")
+        print(" The Program will end now.\n")
+        exit()    
     else:
         clear()
+        incorrect -= 1
         print(" Spaces or Enter only aren't a valid username.")
+        print(f" You only have {incorrect} more attempts at a valid Username,")
+        print(" Before the program ends.")
+        input(" Press Enter and then input a valid username.\n")
         enter_username()
     menu()
 
@@ -93,12 +94,7 @@ def menu():
     """
     clear()
     print("\n Welcome " + username)
-    print("\n Please enter your selection.")
-    print(" 1). Play Rock Paper Sicssors.")
-    print(" 2). Read the instruction's.")
-    print(" 3). Enter to see your score.")
-    print(" 4). Enter a new Username.")
-    print(" 5). Exit the Game.")
+    menu_list()
     answer = input("\n\n Enter your number choice.\n >> ").upper()
     print('')
     while True:
@@ -116,9 +112,9 @@ def menu():
             print(" Thank you for playing the game.\n\n")
             exit()
         else:
-            print('')
-            clear()
-            print(" Please enter a valid input of either 1, 2, 3, 4 or 5\n")
+            print(f" I'm afraid {answer} isn't a valid choice")
+            menu_list()
+            print(" \nPlease enter a valid input of either 1, 2, 3, 4 or 5")
             answer = input("").upper()
 
 
@@ -156,6 +152,14 @@ def instructions():
             print(" Please enter a valid input of either,")
             answer = input(" 'P' to play, 'M' for Menu or 'E' to exit\n >> ").upper()
     clear()
+
+def menu_list():
+    print("\n Please enter your selection.")
+    print(" 1). Play Rock Paper Sicssors.")
+    print(" 2). Read the instruction's.")
+    print(" 3). Enter to see your score.")
+    print(" 4). Enter a new Username.")
+    print(" 5). Exit the Game.")
 
 
 def play_game():
@@ -240,7 +244,7 @@ def play_game():
             exit()
         else:
             clear()
-            update_sheets()
+            update_sheets()  # updates google sheets with score and date.
             print(" Thank you for playing the game.\n")
             exit()
     elif user == "M":
@@ -248,7 +252,7 @@ def play_game():
             reset()
             menu()
         else:
-            update_sheets()
+            update_sheets()  # updates google sheets with score and date.
             reset()
             menu()
     else:
@@ -304,7 +308,8 @@ def print_score(username):
 
 def update_sheets():
     """
-    Sends score and date to google sheets
+    Sends total games and wins along
+    with date to google sheets.
     """
     userinfo.append_row([username], table_range='A2')
     userinfo.append_row([win], table_range='H2')
@@ -323,6 +328,8 @@ def reset():
     total = 0
     global win
     win = 0
+    global incorrect
+    incorrect = 4
 
 
 def clear():

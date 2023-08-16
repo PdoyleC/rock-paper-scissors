@@ -28,7 +28,6 @@
 - The rules are simple: Rock beats Scissors, Scissors beats Paper, and Paper beats Rock.
 - The users score is saved on Google sheets, which can later be recalled for display and total score for there last 10 games is also added together. 
 
-
 ## Existing Features
 
 ### Welcome Message
@@ -119,7 +118,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     ![Didn't enter R,P,S](documentation/nogameplay.png)
 
 - A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line was added to say "If this is your first time here please play the game to view a score.".
-
+- There was feedback to say that it would be nice if there was a date added when the game was played. Code was added to implement this.
 - Code was addded to limit the lenght of usernames to 12 or less characters. This stops users having usernames that could be 50-100 characters in length.
 
 ![13 characters error](documentation/charlenerrorgif.gif)
@@ -191,7 +190,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Code for Dates: [w3schools](https://www.w3schools.com/python/python_datetime.asp).
 - In the display and calculating of the scores, inspiration and research was found at the following sites,
     - [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp),
-    - [Last Lecords](https://www.geeksforgeeks.org/get-last-n-records-of-a-pandas-dataframe/),
+    - [Last Records](https://www.geeksforgeeks.org/get-last-n-records-of-a-pandas-dataframe/),
     - [Print in Python](https://stackoverflow.com/questions/69472788/how-to-get-columns-titles-from-googlesheets-to-print-in-python),
     - [Search Row for Data](https://stackoverflow.com/questions/63033616/python-google-sheets-check-in-which-row-the-data-is).
     - [Search Column for Data](https://stackoverflow.com/questions/61599272/google-sheets-search-column-for-value-using-python).
