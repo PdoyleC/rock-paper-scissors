@@ -113,7 +113,7 @@ def menu():
             exit()
         else:
             clear()
-            print(f" I'm afraid {answer} isn't a valid choice")
+            print(f" I'm afraid \u001b[31m{answer}\u001b isn't a valid choice")
             menu_list()
             print(" \nPlease enter a valid input of either 1, 2, 3, 4 or 5")
             answer = input("").upper()
@@ -258,7 +258,7 @@ def play_game():
             reset()
             menu()
     else:
-        print(f" I'm afraid {user} isn't a valid choice")
+        print(f" I'm afraid {username}, \u001b[31m{user}\u001b[0m isn't a valid choice")
         print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
         input("\u001b[37m \nPress Enter to continue...")
         play_game()
