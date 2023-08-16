@@ -63,7 +63,8 @@ def enter_username():
     global incorrect
     clear()
     print('')
-    print(" Your username can't be just spaces and must be 12 or less characters.")
+    print(" Your username can't be just spaces.")
+    print(" Also your username must be 12 or less characters.")
     username = input(" Please enter username: \n >> ").upper()
     if len(username) > 12:
         clear()
@@ -74,7 +75,7 @@ def enter_username():
         menu()
     elif incorrect == 1:
         clear()
-        print(" \n I'm affraid you've entered an incorrect Username.")
+        print(" \n I'm afraid you've entered an incorrect Username.")
         print(" The Program will end now.\n")
         exit()
     else:
@@ -90,7 +91,7 @@ def enter_username():
 
 def menu():
     """
-    User can pick there option on where to go.
+    User can pick their option on where to go.
     """
     clear()
     print("\n Welcome " + username)
@@ -113,7 +114,7 @@ def menu():
             exit()
         else:
             clear()
-            print(f" I'm afraid \u001b[31m{answer}\u001b[0m isn't a valid choice")
+            print(f" \u001b[31m{answer}\u001b[0m isn't a valid choice")
             menu_list()
             print(" \nPlease enter a valid input of either 1, 2, 3, 4 or 5")
             answer = input("").upper()
@@ -150,16 +151,17 @@ def instructions():
 
         else:
             clear()
-            print(f"\n I'm afraid \u001b[31m{answer}\u001b[0m isn't a valid choice")
+            print(f"\n \u001b[31m{answer}\u001b[0m isn't a valid choice")
             print(" Please enter a valid input of either,")
-            answer = input(" 'P' to play, 'M' for Menu or 'E' to exit\n >> ").upper()
+            print(" 'P' to play, 'M' for Menu or 'E' to exit.")
+            answer = input("\n >> ").upper()
     clear()
 
 
 def menu_list():
     print("\n Please enter your selection.")
-    print(" 1). Play Rock Paper Sicssors.")
-    print(" 2). Read the instruction's.")
+    print(" 1). Play Rock Paper Scissors.")
+    print(" 2). Read the instructions.")
     print(" 3). Enter to see your score.")
     print(" 4). Enter a new Username.")
     print(" 5). Exit the Game.")
@@ -177,7 +179,8 @@ def play_game():
     global win  # Data for games won for google sheets
     print(" Enter Q to save your results and Exit the game entirety.")
     print(" Enter M to save your results and go back to the Menu.")
-    user = input("\u001b[37m\n Please Enter R for Rock, P for Paper, and S for Scissors.\n\n >> ").upper()
+    print(" Please Enter R for Rock, P for Paper, and S for Scissors.")
+    user = input("\n\n >> ").upper()
     if (user == 'R' and computer == 'R'):
         print(" You choose Rock, Computer picked Rock")
         print(" It's a Draw! " + username)
@@ -259,9 +262,9 @@ def play_game():
             reset()
             menu()
     else:
-        print(f" I'm afraid {username}, \u001b[31m{user}\u001b[0m isn't a valid choice")
-        print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
-        input("\u001b[37m \nPress Enter to continue...")
+        print(f" \u001b[31m{user}\u001b[0m isn't a valid choice")
+        print(" Please enter 'R' OR 'P' OR 'S' during game play.")
+        input("\n Press Enter to continue...")
         play_game()
 
 
@@ -275,9 +278,9 @@ def print_score(username):
         last_10_scores = user_data[-10:] if len(user_data) > 10 else user_data
         total_wins = sum(int(row[7]) for row in last_10_scores)
         total_games = sum(int(row[19]) for row in last_10_scores)
-        print(f" {username.upper()} :Over a max of your last 10 Visits you have:")
-        print(f" Won: {total_wins} Games out of: {total_games} Games in total\n")
-        print(f"\n 1). To see {username.upper()} last 10 individual games result.")
+        print(f" {username.upper()} :Over your last 10 Visits you have:")
+        print(f" Won: {total_wins} Games out of: {total_games} Games in total")
+        print(f"\n 1). To see {username.upper()} last 10 individual games.")
         print(" 2). Enter to search for a user name.")
         print(" 3). Return to the Menu Options.")
         scoresearch = input("\n Enter your number choice.\n >> ").upper()
@@ -288,7 +291,7 @@ def print_score(username):
                 for row in last_10_scores:
                     print(f" Username: {row[0]}, Wins: {row[7]}, Total Games: {row[19]}. Date {row[28]}/{row[36]}/{row[45]}")
                 print(f" {row[0]} Total Wins: {total_wins} Total Games: {total_games}\n")
-                input("\u001b[37m \n Press Enter to continue to return to score Menu...")
+                input("\u001b[37m \n Press Enter to continue.")
                 username_to_search = username
                 print_score(username_to_search)
             elif scoresearch == "2":
@@ -298,22 +301,22 @@ def print_score(username):
                 menu()
             else:
                 clear()
-                print(f" I'm afraid {username}, \u001b[31m{scoresearch}\u001b[0m isn't a valid choice")
-                print(" That input isn't valid.")
-                input("\u001b[37m \n Press Enter to continue...")
+                print(f"\u001b[31m{scoresearch}\u001b[0m isn't a valid choice")
+                input("\nPress Enter to return.")
                 username_to_search = username
                 print_score(username_to_search)
 
     else:
         print(" The user doesn't exist")
-        print(" If this is your first time here please play the game to view a score.")
+        print(" If this is your first time here,")
+        print(" Please play the game to view a score.")
         input("\u001b[37m \n Press Enter to continue to return to Menu...")
         menu()
 
 
 def update_sheets():
     """
-    Sends total games and wins along
+    Sends total games and wins along,
     with date to google sheets.
     """
     userinfo.append_row([username], table_range='A2')
@@ -330,7 +333,7 @@ def update_sheets():
 
 def reset():
     """
-    Returns variables to there settings.
+    Returns variables to their settings.
     """
     global total
     total = 0
@@ -342,14 +345,14 @@ def reset():
 
 def clear():
     """
-    Clears the screen
+    Clears the screen.
     """
     os.system('clear')
 
 
 def print_slow(ltr):
     """
-    Creates a slow typing effect
+    Creates a slow typing effect.
     """
     for letter in ltr:
         sys.stdout.write(letter)
