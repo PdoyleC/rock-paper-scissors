@@ -15,6 +15,7 @@ choice = ["R", "P", "S"]
 computer = choice[randint(0, 2)]
 win = 0
 total = 0
+incorrect = 4
 
 
 SCOPE = [
@@ -68,6 +69,7 @@ def enter_username():
     username = input("\n Please enter username: \n >> ").upper()
     if len(username) > 12:
         clear()
+        global incorrect
         incorrect -= 1
         if incorrect == 0:
             clear()

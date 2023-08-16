@@ -122,7 +122,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - There was feedback to say that it would be nice if there was a date added when the game was played. Code was added to implement this.
 - Code was added to limit the length of usernames to 12 or less characters. This stops users having usernames that could be 50-100 characters in length.
 
-    ![13 characters error](documentation/charlenerrorgif.gif)
+    ![13 characters error](documentation/charlenerror.gif)
 
 - A test check was completed.
 
