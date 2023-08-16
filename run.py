@@ -68,9 +68,19 @@ def enter_username():
     username = input(" Please enter username: \n >> ").upper()
     if len(username) > 12:
         clear()
-        print(" \nPlease enter a valid input!")
-        print(" Only a max of 12 characters allowed!")
-        enter_username()
+        incorrect -= 1
+        if incorrect == 0:
+            clear()
+            print(" \n I'm afraid you've entered an incorrect Username.")
+            print(" The Program will end now.\n")
+            exit()
+        else:
+            print(" Please enter a valid input!")
+            print(f" You only have {incorrect} more attempts \
+                at a valid Username,")
+            print(" Only a max of 12 characters allowed!")
+            input(" \nPress Enter and then input a valid username.\n")
+            enter_username()
     elif username.strip() != "":
         menu()
     elif incorrect == 1:
@@ -84,7 +94,7 @@ def enter_username():
         print(" Spaces or Enter only aren't a valid username.")
         print(f" You only have {incorrect} more attempts at a valid Username,")
         print(" Before the program ends.")
-        input(" Press Enter and then input a valid username.\n")
+        input(" \nPress Enter and then input a valid username.\n")
         enter_username()
     menu()
 
@@ -137,14 +147,14 @@ def instructions():
     print(" Would you like to Play the game, go back to the Menu or Exit?")
     print(" Enter P to play")
     print(" Enter M to go to the Menu")
-    answer = input(" Enter E to exit game.\n >> ").upper()
+    answer = input(" Enter Q to exit game.\n >> ").upper()
     print('')
     while True:
         if answer == "P":
             play_game()
         elif answer == "M":
             menu()
-        if answer == "E":
+        if answer == "Q":
             clear()
             print("Thank you for playing the game.\n\n")
             exit()
@@ -153,7 +163,7 @@ def instructions():
             clear()
             print(f"\n \u001b[31m{answer}\u001b[0m isn't a valid choice")
             print(" Please enter a valid input of either,")
-            print(" 'P' to play, 'M' for Menu or 'E' to exit.")
+            print(" 'P' to play, 'M' for Menu or 'Q' to exit.")
             answer = input("\n >> ").upper()
     clear()
 

@@ -91,6 +91,7 @@
 ## Google Sheet Access 
 
 Google sheet is used to store, usernames and game won along with total games played.
+
 ![Google Sheet](documentation/googlesheet.png)
 
 ## Flow-Chart
@@ -101,22 +102,27 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 ## Testing
 - Testing has been implemented throughout the entire project mainly debugging through running the program in the Code Anywhere terminal.
 - Tested in both Code Anywhere terminal and Heroku terminal.
-- CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/)
+- CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/). There is 1 line of code that wasn't split and that line is for the credentials. 
+
+   ![CI Python linter](documentation/cipythonlinter.png)
 
 - A space was enter in as a user name, and played the game, and in google sheets (image below) there was no username in the 1st column. A score and total games was entered, but no user name. Code was added to stop spaces only being entered as a username. If spaces are only entered an error message appears.
 
     ![Space entered Username](documentation/testnouser.png)
 
-- An error message will appear on the user input just after the intro title if only spaces are entered. 
-- An error message will also appear on the user input if a new user is entered from the main menu if only spaces are entered.
 - A username was enter and then selected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. Code was entered to stop this from happening.
     ![Didn't enter R,P,S](documentation/nogameplay.png)
 
-- A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line was added to say "If this is your first time here please play the game to view a score.".
+- A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line of code was added to say "If this is your first time here please play the game to view a score.".
+- Username was tested, space was entered as a username, an error message was displayed, saying that you have 3 more attempts at entering a valid username. After the 3rd attempt the program ends.
+
+    ![Username Error](documentation/usernameerror.png)
+
 - There was feedback to say that it would be nice if there was a date added when the game was played. Code was added to implement this.
 - Code was added to limit the length of usernames to 12 or less characters. This stops users having usernames that could be 50-100 characters in length.
 
-![13 characters error](documentation/charlenerrorgif.gif)
+    ![13 characters error](documentation/charlenerrorgif.gif)
+- Username was tested, 13 characters were entered as a username, an error message was displayed, saying that you have 3 more attempts at entering a valid username. After the 3rd attempt the program ends.
 
 - A test check was completed.
 
