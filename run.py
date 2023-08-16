@@ -258,7 +258,7 @@ def play_game():
             reset()
             menu()
     else:
-        print(" That input isn't valid.")
+        print(f" I'm afraid {user} isn't a valid choice")
         print(" Please enter one of the following letters 'R' OR 'P' OR 'S' during game play.")
         input("\u001b[37m \nPress Enter to continue...")
         play_game()
