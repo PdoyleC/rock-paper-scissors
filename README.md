@@ -31,7 +31,7 @@
 - When a new game starts the welcome message is displayed.
 - The user is welcomed with an emoji of a Rock, Paper and Scissors.
 
-### Username Input
+### User Name Input
 - The user is asked for a user name, this user name will be used to save there score. Where the user can lookup there score at a later stage.
 
 ### Menu selection
@@ -53,7 +53,7 @@
 
 ### Game Area
 - In the game area the user is asked to enter either R for Rock, P for Paper, and S for Scissors.
-- If another letter or number is entered as error will appear, That input isn't valid. Please enter 'R' OR 'P' OR 'S'!".
+- If another letter or number is entered an error will appear, That input isn't valid. Please enter 'R' OR 'P' OR 'S'!".
 - The computers choice is random, and the computers result is checked against the user choice.
 - The users and computers choice is displayed to the user and if it's a Win, Lose or Draw.
 - The user has a choice to continue to play for ever, or they can exit the game or go back to the menu.
@@ -133,7 +133,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
     ![Sheets Bug](documentation/bug.png)
 
-- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue would happen. 
+- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue as before would happen, where the resluts saved under Column A. So H was selected H for the win column.
 - The work around for this was to append the results for wins in column H and for total games into column T.
     ![Sheets Bug](documentation/bug1.png)
 
