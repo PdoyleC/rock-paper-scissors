@@ -1,9 +1,9 @@
 """
 Modules
 """
-import random
 from random import randint
 import sys
+import os
 import time
 import datetime
 import gspread
@@ -149,7 +149,8 @@ def instructions():
             exit()
 
         else:
-            print('')
+            clear()
+            print(f"\n I'm afraid \u001b[31m{answer}\u001b[0m isn't a valid choice")
             print(" Please enter a valid input of either,")
             answer = input(" 'P' to play, 'M' for Menu or 'E' to exit\n >> ").upper()
     clear()
@@ -172,8 +173,8 @@ def play_game():
     choice = ["R", "P", "S"]
     computer = choice[randint(0, 2)]
     clear()
-    global total
-    global win
+    global total  # Data for total games played for google sheets
+    global win  # Data for games won for google sheets
     print(" Enter Q to save your results and Exit the game entirety.")
     print(" Enter M to save your results and go back to the Menu.")
     user = input("\u001b[37m\n Please Enter R for Rock, P for Paper, and S for Scissors.\n\n >> ").upper()
@@ -296,6 +297,8 @@ def print_score(username):
             elif scoresearch == "3":
                 menu()
             else:
+                clear()
+                print(f" I'm afraid {username}, \u001b[31m{scoresearch}\u001b[0m isn't a valid choice")
                 print(" That input isn't valid.")
                 input("\u001b[37m \n Press Enter to continue...")
                 username_to_search = username
@@ -326,6 +329,9 @@ def update_sheets():
 
 
 def reset():
+    """
+    Returns variables to there settings.
+    """
     global total
     total = 0
     global win
@@ -338,7 +344,7 @@ def clear():
     """
     Clears the screen
     """
-    print("\033c")
+    os.system('clear')
 
 
 def print_slow(ltr):

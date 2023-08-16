@@ -189,6 +189,8 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - To create font colour and background colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 - To transfer variables from one function to another: [stackoverflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
 - Code for Dates: [w3schools](https://www.w3schools.com/python/python_datetime.asp).
+- Code to clear screen: [geeksforgeek](https://www.geeksforgeeks.org/clear-screen-python/).
+- Code to type slow: [stackoverflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing).
 - In the display and calculating of the scores, inspiration and research was found at the following sites,
     - [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp),
     - [Last Records](https://www.geeksforgeeks.org/get-last-n-records-of-a-pandas-dataframe/),
