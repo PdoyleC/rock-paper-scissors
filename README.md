@@ -113,7 +113,8 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - A username was enter and then selected 1 on main menu to play game and when the 1st option comes up, to enter R,P,S or leave the area, I entered M to go back to the menu and a Zero score was recorded. Code was entered to stop this from happening.
     ![Didn't enter R,P,S](documentation/nogameplay.png)
 
-- A New user was entered and didn't play the game, the score was checked and an error "The user doesn't exist". So a line of code was added to say "If this is your first time here please play the game to view a score.".
+- A New user was entered from the main menu and didn't play the game, the score was checked and an error "The user doesn't exist". So a line of code was added to say "If this is your first time here please play the game to view a score.".
+- Username was tested, 13 characters were entered as a username, an error message was displayed, saying that you have 3 more attempts at entering a valid username. After the 3rd attempt the program ends.
 - Username was tested, space was entered as a username, an error message was displayed, saying that you have 3 more attempts at entering a valid username. After the 3rd attempt the program ends.
 
     ![Username Error](documentation/usernameerror.png)
@@ -122,7 +123,6 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Code was added to limit the length of usernames to 12 or less characters. This stops users having usernames that could be 50-100 characters in length.
 
     ![13 characters error](documentation/charlenerrorgif.gif)
-- Username was tested, 13 characters were entered as a username, an error message was displayed, saying that you have 3 more attempts at entering a valid username. After the 3rd attempt the program ends.
 
 - A test check was completed.
 
@@ -188,6 +188,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - Code to clear screen: [geeksforgeek](https://www.geeksforgeeks.org/clear-screen-python/).
 - Code to type slow: [stackoverflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing).
 - Code and instruction on spliting code when one line exceeds 80 characters: [python-long-string](https://note.nkmk.me/en/python-long-string/).
+- Code for nested if statements: [codeinstitute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+2020_T1/courseware/f780287e5c3f4e939cd0adb8de45c12a/4d5932e873e14e9da4efbe93818b1a8d/).
 - In the display and calculating of the scores, inspiration and research was found at the following sites,
     - [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp),
     - [Last Records](https://www.geeksforgeeks.org/get-last-n-records-of-a-pandas-dataframe/),
