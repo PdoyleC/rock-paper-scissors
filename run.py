@@ -76,7 +76,7 @@ def enter_username():
         clear()
         print(" \n I'm affraid you've entered an incorrect Username.")
         print(" The Program will end now.\n")
-        exit()    
+        exit()
     else:
         clear()
         incorrect -= 1
@@ -112,6 +112,7 @@ def menu():
             print(" Thank you for playing the game.\n\n")
             exit()
         else:
+            clear()
             print(f" I'm afraid {answer} isn't a valid choice")
             menu_list()
             print(" \nPlease enter a valid input of either 1, 2, 3, 4 or 5")
@@ -152,6 +153,7 @@ def instructions():
             print(" Please enter a valid input of either,")
             answer = input(" 'P' to play, 'M' for Menu or 'E' to exit\n >> ").upper()
     clear()
+
 
 def menu_list():
     print("\n Please enter your selection.")
