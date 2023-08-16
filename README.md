@@ -186,6 +186,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 - To transfer variables from one function to another: [stack overflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
 - Code for Dates: [w3schools](https://www.w3schools.com/python/python_datetime.asp).
 - Code to clear screen: [geeksforgeek](https://www.geeksforgeeks.org/clear-screen-python/).
+- How to include emoji was noticed in a connect 4 Tutorial: [youTube](https://www.youtube.com/watch?v=NkmYfTl2L_Y&t=428s),pressing the windows key + period key.
 - Code to type slow: [stackoverflow](https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing).
 - Code and instruction on spliting code when one line exceeds 80 characters: [python-long-string](https://note.nkmk.me/en/python-long-string/).
 - Code for nested if statements: [codeinstitute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+2020_T1/courseware/f780287e5c3f4e939cd0adb8de45c12a/4d5932e873e14e9da4efbe93818b1a8d/).
