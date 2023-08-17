@@ -143,7 +143,7 @@ def instructions():
     print(" 3) Rock wins against scissors.")
     print(" 4) Scissors win against paper.")
     print(" 5) Paper wins against rock.")
-    print(" 6) The user can see there score in section 3 of the main menu.")
+    print(" 6) The user can see their score in section 3 of the main menu.")
     print(' ')
     print(' ')
     print(" Would you like to Play the game, go back to the Menu or Exit?")

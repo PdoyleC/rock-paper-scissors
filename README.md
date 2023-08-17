@@ -38,15 +38,15 @@
 - The user is welcomed with an emoji of a Rock, Paper and Scissors.
 
 ### Username Input
-- The user is asked for a user name, this user name will be used to save there score. Where the user can lookup there score at a later stage.
+- The user is asked for a username, this user name will be used to save there score. Where the user can look up there score at a later stage.
 
 ### Menu selection
-- After the user name is entered the menu selection appears.
+- After the username is entered the menu selection appears.
 - From the menu area -
     * The user can play the game.
     * Read the instructions.
     * Read their score. 
-    * Change user name.
+    * Change username.
     * Exit the game
 
 <details>
@@ -59,21 +59,21 @@
 
 ### Game Area
 - In the game area the user is asked to enter either R for Rock, P for Paper, and S for Scissors.
-- If another letter or number is entered an error will appear, That input isn't valid. Please enter 'R' OR 'P' OR 'S'!".
+- If another letter or number is entered an error will appear, that input isn't valid. Please enter 'R' OR 'P' OR 'S'!".
 - The computers choice is random, and the computers result is checked against the user choice.
-- The users and computers choice is displayed to the user and if it's a Win, Lose or Draw.
+- The users and computers choice are displayed to the user and if it's a Win, Lose or Draw.
 - The user has a choice to continue to play for ever, or they can exit the game or go back to the menu.
 - It is at this point the number of wins and total games played are saved to google sheets for later display.
 
 ![Game Play](documentation/gameplay.png)
 
-### New User Name
-- A new player can enter there username without exiting the game and starting the game again.
+### New UserName
+- A new player can enter their username without exiting the game and starting the game again.
 
 ### Score Area
 - This area shows the current user there score.
-- The user can see there results for the last 10 games that they have played.
-- The user can search for other users by there user name.
+- The user can see their results for the last 10 games that they have played.
+- The user can search for other users by their username.
 <details>
 <summary>Features Image</summary>
 
@@ -89,7 +89,7 @@
 - Create a login, so that there is only 1 person per username.
 
 ## Colour
-- Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a lose. 
+- Colour for the win result and lose result text was selected, as it is more initially noticeable to see a Green colour for a win and a Red colour for a loss. 
 - A draw result was left as white.
 
     ![Font Colour](documentation/colours.png)
@@ -108,11 +108,11 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 ## Testing
 - Testing has been implemented throughout the entire project mainly debugging through running the program in the Code Anywhere terminal.
 - Tested in both Code Anywhere terminal and Heroku terminal.
-- CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/). There is 1 line of code that wasn't split and that line is for the credentials. 
+- CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/). There is 1 line of code that wasn't split, and that line is for the credentials. 
 
    ![CI Python linter](documentation/cipythonlinter.png)
 
-- A space was enter in as a user name, and played the game, and in google sheets (image below) there was no username in the 1st column. A score and total games was entered, but no user name. Code was added to stop spaces only being entered as a username. If spaces are only entered an error message appears.
+- A space was entered in as a username, and played the game, and in google sheets (image below) there was no username in the 1st column. A score and total games was entered, but no user name. Code was added to stop spaces only being entered as a username. If spaces are only entered an error message appears.
 
     ![Space entered Username](documentation/testnouser.png)
 
@@ -139,7 +139,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
     ![Sheets Bug](documentation/bug.png)
 
-- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue as before would happen, where the resluts saved under Column A. So H was selected H for the win column, and T for Total games played. For the date, those results were put into Columns AC,AK and AT. By extending the columns in google sheets.
+- I selected H for the win column and tested the code then and this worked, I then tested column's C,D,E,F,G to append the results and the same issue as before would happen, where the results saved under Column A. So H was selected H for the win column, and T for Total games played. For the date, those results were put into Columns AC,AK and AT. By extending the columns in google sheets.
 - The work around for this was to append the results for wins in column H and for total games into column T.
     ![Sheets Bug](documentation/bug1.png)
 
@@ -208,7 +208,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     - [Google Sheets Guide](https://understandingdata.com/posts/the-comprehensive-guide-to-google-sheets-with-python/).
     - [Read/Write Google Sheets Guide](https://aryanirani123.medium.com/read-and-write-data-in-google-sheets-using-python-and-the-google-sheets-api-6e206a242f20).
     - [Appending Rows Google Sheets Guide](https://stackoverflow.com/questions/63775455/python-gspread-api-not-appending-rows-if-multiple-functions-called).
-    - [Invalid user name for spaces/nothong](https://stackoverflow.com/questions/51764409/how-to-prevent-user-from-inputting-spaces-nothing-in-python).
+    - [Invalid username for spaces/nothong](https://stackoverflow.com/questions/51764409/how-to-prevent-user-from-inputting-spaces-nothing-in-python).
     - [Getting the sum from an array](https://stackoverflow.com/questions/65100023/how-do-i-get-the-sum-of-a-row-in-an-array)
 
 ## Acknowledgments
