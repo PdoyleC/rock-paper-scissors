@@ -96,7 +96,7 @@
 
 ## Google Sheet Access 
 
-Google sheet is used to store, usernames and game won along with total games played.
+Google sheet is used to store, usernames and games won along with total games played.
 
 ![Google Sheet](documentation/googlesheet.png)
 
