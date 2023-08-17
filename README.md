@@ -27,7 +27,7 @@
 
 ## Project Objectives
 - Write code that will allow a user to play Rock Paper Scissors.
-- Save data in Google sheet, so that the data can be recalled to be displayed or manipulated in  a scoring system.
+- Save data in Google sheet, so that the data can be recalled being displayed or manipulated in a scoring system.
 - The user can navigate to different areas, to read and write with the program.
 - The user has control, and is able to go to the main menu or able to exit the program.
 
@@ -189,7 +189,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 ## Credits
 - Rock, Paper, Scissors image was taken my by the owner of the READme.
 - Google Developers site was a great tool for research to access and edit Google sheet: [Google Developers](https://developers.google.com/sheets/api/guides/create).
-- To create font colour and background colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
+- To create font colour: [Python font colour](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 - To transfer variables from one function to another: [stack overflow global statement](https://stackoverflow.com/questions/10506973/can-not-increment-global-variable-from-function-in-python).
 - Code for Dates: [w3schools](https://www.w3schools.com/python/python_datetime.asp).
 - Code to clear screen: [geeksforgeek](https://www.geeksforgeeks.org/clear-screen-python/).
