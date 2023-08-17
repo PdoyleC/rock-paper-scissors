@@ -127,7 +127,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
     ![Username Error](documentation/usernameerror.png)
 
 - There was feedback to say that it would be nice if there was a date added when the game was played. Code was added to implement this.
-- A space was placed in front of a username and then the game was played. After this the score was checked and there was no user found. The data was in google sheets, but the space was saved along with the username. A line of code was used to removed the space.  [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp).
+- From user feedback - A space was placed in front of a username and then the game was played. After this the score was checked and there was no user found. The data was in google sheets, but the space was saved along with the username. A line of code was used to removed the space.  [strip() Method](https://www.w3schools.com/python/ref_string_strip.asp).
 - Code was added to limit the length of usernames to 12 or less characters. This stops users having usernames that could be 50-100 characters in length.
 
     ![13 characters error](documentation/charlenerror.gif)
