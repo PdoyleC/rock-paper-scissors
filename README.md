@@ -108,6 +108,7 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 ## Testing
 - Testing has been implemented throughout the entire project mainly debugging through running the program in the Code Anywhere terminal.
 - Tested in both Code Anywhere terminal and Heroku terminal.
+- [Python Tutor](https://pythontutor.com/render.html#mode=display), was also used for trouble shooting.
 - CI Python linter/Syntax checker [pep8ci](https://pep8ci.herokuapp.com/). There is 1 line of code that wasn't split, and that line is for the credentials. 
 
    ![CI Python linter](documentation/cipythonlinter.png)
