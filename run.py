@@ -281,6 +281,12 @@ def play_game():
 
 
 def print_score(username):
+    """
+    Gets data from google sheets(Username, Wins, Games, Date).
+    Manipulates data in google sheets by showing only the current username.
+    Uses addition sum to add the Wins and Games to a total.
+    Can search for a user.
+    """
     clear()
     data = sheet.get_all_values()
     username = username.lower()
@@ -304,10 +310,10 @@ def print_score(username):
                     print(f" {row[0]}, \
     Wins: {row[7]}, \
     Out of {row[19]} Games. \
-    Date {row[28]}/{row[36]}/{row[45]}")
+    Date {row[28]}/{row[36]}/{row[45]}")  # prints username,wins,games and date
                 print(f" {row[0]} \
     Total Wins: {total_wins} \
-    Total Games: {total_games}\n")
+    Total Games: {total_games}\n")  # prints username,wins,games totals
                 input("\u001b[37m \n Press Enter to continue.")
                 username_to_search = username
                 print_score(username_to_search)
