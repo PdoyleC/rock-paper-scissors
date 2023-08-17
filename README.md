@@ -25,6 +25,12 @@
 - The rules are simple: Rock beats Scissors, Scissors beats Paper, and Paper beats Rock.
 - The users score is saved on Google sheets, which can later be recalled for display and total score for there last 10 games is also added together. 
 
+## Project Objectives
+- Write code that will allow a user to play Rock Paper Scissors.
+- Save data in Google sheet, so that the data can be recalled to be displayed or manipulated in  a scoring system.
+- The user can navigate to different areas, to read and write with the program.
+- The user has control, and is able to go to the main menu or able to exit the program.
+
 ## Existing Features
 
 ### Welcome Message
