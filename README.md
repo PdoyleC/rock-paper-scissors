@@ -29,7 +29,7 @@
 - Write code that will allow a user to play Rock Paper Scissors.
 - Save data in Google sheet, so that the data can be recalled being displayed or manipulated in a scoring system.
 - The user can navigate to different areas, to read and write with the program.
-- The user has control, and is able to go to the main menu or able to exit the program.
+- The user has control, and can to go to the main menu or is able to exit the program.
 
 ## Existing Features
 
@@ -215,4 +215,9 @@ A flow chart for this game created with the help of Lucid [Web-Site](https://luc
 
 - Thank you to my mentor Elaine Roche who helped with points and tips and gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers for my project.
 
+## Acknowledgments
 
+- Thank you to my mentor Elaine Roche who helped with points and tips and gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers for my project.
+## Acknowledgments
+
+- Thank you to my mentor Elaine Roche who helped with points and tips and gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers for my project.
