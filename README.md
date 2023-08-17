@@ -37,7 +37,7 @@
 - When a new game starts the welcome message is displayed.
 - The user is welcomed with an emoji of a Rock, Paper and Scissors.
 
-### User Name Input
+### Username Input
 - The user is asked for a user name, this user name will be used to save there score. Where the user can lookup there score at a later stage.
 
 ### Menu selection
