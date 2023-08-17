@@ -84,6 +84,7 @@ at a valid Username,")
             input("\n Press Enter and then input a valid username.\n")
             enter_username()
     elif username.strip() != "":
+        username = username.strip()
         menu()
     elif incorrect == 1:
         clear()
@@ -189,7 +190,7 @@ def play_game():
     clear()
     global total  # Data for total games played for google sheets
     global win  # Data for games won for google sheets
-    print(" Enter Q to save your results and Exit the game entirety.")
+    print(" Enter Q to save your results and Exit the game entirely.")
     print(" Enter M to save your results and go back to the Menu.")
     print("\n Please Enter R for Rock, P for Paper, and S for Scissors.")
     user = input("\n\n >> ").upper()
